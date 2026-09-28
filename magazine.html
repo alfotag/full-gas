@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Gas Magazine — Numero 01 · Ottobre 2026</title>
+<meta name="description" content="Full Gas Magazine, numero 01: lo speciale al Gazometro in copertina, l'officina, l'archivio, un confronto con verdetto e la pagina del tasto rosso. Impaginato con i caratteri del canale, da sfogliare a doppia pagina o da leggere di fila.">
+<meta name="theme-color" content="#0B0C0E">
+<meta property="og:title" content="Full Gas Magazine — Numero 01">
+<meta property="og:description" content="Mille moto sotto il Gazometro. Il numero uno si sfoglia.">
+<meta property="og:image" content="assets/img/gazometro-rust.jpg">
+<link rel="icon" href="brand/fg_mark_arancio.png" type="image/png">
+<link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fullgas.css">
+<style>
+.mag-hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center;padding-bottom:clamp(48px,6vw,80px)}
+.mag-hero h1{font-size:clamp(44px,7vw,112px)}
+.mag-hero h1 em{font-style:normal;color:var(--ignition)}
+@media(max-width:900px){.mag-hero{grid-template-columns:1fr}.mag-cover{max-width:440px;margin-inline:auto}}
+@media(max-width:700px){.mag-cover .cover__lines{display:none}}
+.colophon{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;margin-top:28px}
+.colophon div{background:var(--grafite);padding:14px 16px;display:grid;gap:4px}
+.colophon b{font-family:var(--f-dati);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--titanio);font-weight:500}
+.colophon span{font-size:14px;color:var(--bianco)}
+@media(max-width:560px){.colophon{grid-template-columns:1fr}}
+.rubrica{font-family:var(--f-dati);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ignition);font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="page-grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Full Gas, home"><img class="brand__mark" src="brand/fg_mark_arancio.png" alt=""><span class="brand__name">Full Gas</span></a>
+    <nav class="nav__links" aria-label="Principale">
+      <a href="index.html#programmi">Programmi</a>
+      <a href="index.html#palinsesto">Palinsesto</a>
+      <a href="speciale-gazometro.html">Speciale Gazometro</a>
+      <a href="magazine.html" aria-current="page">Magazine</a>
+      <a href="index.html#hbbtv">Come vederci</a>
+    </nav>
+    <div class="nav__cta">
+      <span class="pill pill--soon"><i class="dot dot--pulse"></i>403 · In arrivo</span>
+      <a class="btn btn--ghost btn--sm" href="https://nexumchannel.com" target="_blank" rel="noopener">Nexum ↗</a>
+      <button class="nav__burger" aria-label="Apri il menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ COPERTINA ============ -->
+<section class="sez mag-hero-sez" style="padding-top:calc(var(--nav-h) + clamp(32px,6vw,72px))">
+  <div class="wrap mag-hero">
+    <div class="mag-cover reveal">
+      <img src="assets/img/gazometro-rust.jpg" alt="Copertina: la struttura del Gazometro a luce radente">
+      <div class="cover__ribbon">Numero 01 · Ottobre 2026</div>
+      <div class="cover__lines"><span><b>Speciale</b> Il Gazometro accende i motori</span><span><b>Officina</b> Le mani prima delle parole</span><span><b>Archivio</b> 1937, il serbatoio più alto d'Italia</span></div>
+      <div class="cover__t">
+        <div><div class="cover__masthead">Full<br>G<i>a</i>s</div><div class="cover__num">Magazine · Motori e documentari · Canale 403</div></div>
+        <div></div>
+        <div><div class="cover__title">Mille moto <i>sotto</i> il Gazometro</div><div class="cover__strip"><span>Roma Ostiense · 25–27 set 2026</span><span>Una rete Nexum</span></div></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow reveal"><b>Full Gas Magazine</b> · Numero 01 · Ottobre 2026</p>
+      <h1 class="reveal" data-delay="1" style="margin:18px 0 20px">Il numero <em>uno.</em></h1>
+      <p class="lead reveal" data-delay="2">Lo speciale in copertina, l'officina, l'archivio, un confronto con verdetto e la pagina che spiega il tasto rosso. <b>Impaginato con i tre caratteri del canale</b>: Archivo per la titolazione, JetBrains Mono per i dati, Instrument Serif per la voce d'archivio. Da sfogliare a doppia pagina o da leggere di fila.</p>
+      <div class="hero__actions reveal" data-delay="3" style="margin-top:26px">
+        <a class="btn btn--primary" href="#sfoglia">Sfoglia le doppie pagine</a>
+        <a class="btn btn--ghost" href="#leggi">Leggi di fila</a>
+      </div>
+      <div class="colophon reveal" data-delay="4">
+        <div><b>Rubriche</b><span>Speciale · Officina · Archivio · Confronto · Lungo Raggio · Tasto rosso</span></div>
+        <div><b>Formato</b><span>12 pagine · 6 doppie · 5 articoli di fila</span></div>
+        <div><b>Regola</b><span>70% scuro · 20% chiaro · 10% arancione</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOMMARIO ============ -->
+<section class="sez sez--tight" style="background:var(--asfalto-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sez-head sez-head--split">
+      <div><p class="eyebrow reveal">Sommario</p><h2 class="reveal t-medio" data-delay="1">Cosa c'è dentro</h2></div>
+      <p class="lead reveal" data-delay="2" style="font-size:16px">Ogni pezzo porta il nome della rubrica e il numero di pagina. Cliccando si va all'articolo di fila.</p>
+    </div>
+    <nav class="sommario reveal" aria-label="Sommario">
+      <a href="#a-editoriale"><span class="n">02</span><span class="t">Storie che vanno a benzina<small>Editoriale · perché un canale motori si racconta da vicino</small></span><span class="r">Editoriale</span></a>
+      <a href="#a-speciale"><span class="n">04</span><span class="t">Il Gazometro accende i motori<small>Speciale · tre giorni e una notte a Roma Ostiense</small></span><span class="r">Speciale</span></a>
+      <a href="#a-moto"><span class="n">06</span><span class="t">Tre moto che valevano il viaggio<small>Le novità viste sul posto: Flying Flea C6, Norton, Moto Morini 3½ Sport</small></span><span class="r">Speciale</span></a>
+      <a href="#a-archivio"><span class="n">08</span><span class="t">Un serbatoio alto come un palazzo<small>Archivio · dal 1937 al distretto dell'innovazione</small></span><span class="r">Archivio</span></a>
+      <a href="#a-officina"><span class="n">10</span><span class="t">Come guardiamo una macchina<small>Officina · la grammatica visiva del canale, spiegata</small></span><span class="r">Officina</span></a>
+      <a href="#a-tasto"><span class="n">12</span><span class="t">Tasto rosso, posizione otto<small>Come si arriva a Full Gas sul canale 403</small></span><span class="r">Come vederci</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ SFOGLIA ============ -->
+<section class="sez" id="sfoglia">
+  <div class="wrap">
+    <div class="sez-head sez-head--split">
+      <div><p class="eyebrow reveal">Sfoglia</p><h2 class="reveal" data-delay="1">Sei doppie pagine.</h2></div>
+      <p class="lead reveal" data-delay="2" style="font-size:16px">Scorri in orizzontale, usa le frecce, oppure i tasti ← →. Ogni doppia è impaginata come andrebbe in stampa: testo nella metà bassa, dati in monospaziato, un solo elemento arancione per pagina.</p>
+    </div>
+    <div class="sfoglia reveal" tabindex="0" aria-label="Doppie pagine del magazine">
+      <div class="sfoglia__track">
+
+        <!-- 1 · editoriale + auto storica -->
+        <article class="spread" aria-label="Pagine 2 e 3">
+          <div class="pg pg--dark">
+            <div class="pg__folio"><span>Full Gas Magazine</span><span>N. 01</span></div>
+            <div><div class="pg__k">Editoriale</div><h3 class="pg__h">Storie che vanno <i>a benzina.</i></h3>
+              <div class="pg__body" style="margin-top:14px"><p>Un canale motori si può fare in due modi. Da lontano, con il configuratore acceso e la macchina lucida come plastica; o da vicino, con la polvere che ha addosso, in una strada vera, in un capannone vero. Full Gas sceglie il secondo.</p><p>Si sta vicini alle cose: lamiera, pelle, gomma, olio, il freddo del mattino in officina. La luce è quella che c'è. Il repertorio si mostra per quello che è. Il testo entra solo quando porta un dato. E il metro è uno solo: sembra girato da qualcuno che era lì.</p><p>Questo numero uno è fatto così. Lo speciale al Gazometro, tre moto viste sul posto, una pagina d'archivio, una d'officina. E l'ultima, che dice come trovarci: canale 403, tasto rosso, posizione otto.</p></div></div>
+            <div class="pg__folio"><span>Ottobre 2026</span><span>02</span></div>
+          </div>
+          <div class="pg pg--img"><img src="assets/img/kv-alfa.webp" alt="Un coupé italiano degli anni Sessanta a luce radente, nel buio dello studio"><div class="pg__cap"><div class="pg__k" style="color:var(--amber)">L'Auto Storica</div><h3 class="pg__h" style="font-size:clamp(20px,2.8vw,40px)">La linea che non invecchia</h3><div class="pg__folio" style="margin-top:10px"><span>Coupé anni Sessanta · luce radente</span><span>03</span></div></div></div>
+        </article>
+
+        <!-- 2 · speciale -->
+        <article class="spread" aria-label="Pagine 4 e 5">
+          <div class="pg">
+            <div class="pg__folio"><span>Speciale · Roma Ostiense</span><span>N. 01</span></div>
+            <div><div class="pg__k">Speciale</div><h3 class="pg__h">Il Gazometro <i>accende</i> i motori</h3>
+              <p class="pg__dek">Tre giorni sotto il gasometro più alto d'Italia: oltre trenta case, prove su strada e una parata notturna di mille moto fino al centro.</p>
+              <div class="pg__body"><p>Il Gazometro di Roma è la struttura che si vede da tutta la parte sud della città: un cilindro di ferro a traliccio, costruito fra il 1935 e il 1937 dall'Ansaldo, che per decenni ha contenuto il gas illuminante della capitale. Oggi resta lo scheletro, che è la cosa più bella.</p><p>È qui, per la prima volta in dieci edizioni, che il salone romano della moto ha portato il suo villaggio. Si arriva col casco, ci si registra allo stand e si esce in prova. Sabato sera, fino a mille motociclisti sono partiti insieme verso le strade del centro, con il Moto Club Polizia di Stato ad aprire la strada.</p></div></div>
+            <div class="pg__folio"><span>25–27 settembre 2026</span><span>04</span></div>
+          </div>
+          <div class="pg pg--img"><img src="assets/img/gazometro-dusk.jpg" alt="Il Gazometro al crepuscolo, con i fari delle auto in strada"><div class="pg__cap"><div class="pg__k" style="color:var(--amber)">Atto III · la notte</div><h3 class="pg__h" style="font-size:clamp(20px,2.8vw,40px)">Mille fari dal Gazometro al centro</h3><div class="pg__folio" style="margin-top:10px"><span>Ore 21 · luce disponibile</span><span>05</span></div></div></div>
+        </article>
+
+        <!-- 3 · numero + tre moto -->
+        <article class="spread" aria-label="Pagine 6 e 7">
+          <div class="pg pg--ar">
+            <div class="pg__folio"><span>Rome Night Run</span><span>N. 01</span></div>
+            <div class="pg__big">1.000<small>moto in un'unica sfilata notturna · sabato 26 settembre</small></div>
+            <div class="pg__folio"><span>Dal Gazometro al centro di Roma</span><span>06</span></div>
+          </div>
+          <div class="pg">
+            <div class="pg__folio"><span>Speciale · le novità</span><span>N. 01</span></div>
+            <div><div class="pg__k">Viste sul posto</div><h3 class="pg__h" style="font-size:clamp(22px,3vw,42px)">Tre moto che valevano il viaggio</h3>
+              <div class="pg__list" style="margin-top:14px">
+                <div><b>01</b><span><strong>Royal Enfield Flying Flea C6</strong> — elettrica, al debutto italiano. Telaio in alluminio e forcella a parallelogramma: sembra degli anni Trenta, è il pezzo più nuovo del salone.</span></div>
+                <div><b>02</b><span><strong>Norton</strong> — i nuovi modelli, esposti e disponibili per le prove nel Village.</span></div>
+                <div><b>03</b><span><strong>Moto Morini 3½ Sport</strong> — un nome storico su un bicilindrico a V di 60°: 32 CV, 30 Nm, listino 4.190 euro.</span></div>
+                <div><b>+</b><span><strong>Custom</strong> — una Royal Enfield con due motori in serie: due moto diventate una. Si mostra da vicino, un dado alla volta.</span></div>
+              </div></div>
+            <div class="pg__folio"><span>Speciale</span><span>07</span></div>
+          </div>
+        </article>
+
+        <!-- 4 · archivio -->
+        <article class="spread" aria-label="Pagine 8 e 9">
+          <div class="pg pg--oro">
+            <div class="pg__folio"><span>Archivio</span><span>N. 01</span></div>
+            <div class="pg__quote">«Il più alto dei quattro gazometri di Roma: novanta metri di ferro chiodato, costruiti fra il 1935 e il 1937, per tenere il gas che accendeva la città.»<small>Voce d'archivio · Ostiense, 1937</small></div>
+            <div class="pg__folio"><span>Dal serbatoio alla piazza</span><span>08</span></div>
+          </div>
+          <div class="pg pg--img"><img src="assets/img/ostiense-bw.jpg" alt="Ostiense: gru e capannoni dell'area industriale in bianco e nero"><div class="pg__cap"><div class="pg__k" style="color:var(--oro)">Archeologia industriale</div><h3 class="pg__h" style="font-size:clamp(20px,2.8vw,40px)">Ostiense, in bianco e nero</h3><div class="pg__folio" style="margin-top:10px"><span>Il repertorio si mostra per quello che è</span><span>09</span></div></div></div>
+        </article>
+
+        <!-- 5 · officina + confronto -->
+        <article class="spread" aria-label="Pagine 10 e 11">
+          <div class="pg">
+            <div class="pg__folio"><span>Officina</span><span>N. 01</span></div>
+            <div><div class="pg__k">Come guardiamo una macchina</div><h3 class="pg__h" style="font-size:clamp(22px,3vw,42px)">Le mani prima delle parole</h3>
+              <div class="pg__body" style="margin-top:12px"><p>Ventiquattro-trentacinque millimetri per la scala: quanto è grande, dove sta, com'è fatto intorno. Cinquanta-ottantacinque per l'uomo che la guarda o la guida. Macro per la meccanica, che è il nostro primo piano vero.</p><p>La profondità di campo si usa per dire qualcosa, non per fare bello: sfocare tutto tranne un dado è una frase, sfocare tutto sempre è un tic. E la macchina non è mai perfettamente pulita né perfettamente illuminata. Se la carrozzeria sembra plastica lucida, l'inquadratura ha sbagliato.</p></div></div>
+            <div class="pg__folio"><span>Dalla bibbia visiva</span><span>10</span></div>
+          </div>
+          <div class="pg pg--dark">
+            <div class="pg__folio"><span>Confronto e Verdetto</span><span>N. 01</span></div>
+            <div><div class="pg__k">Come si misura</div><h3 class="pg__h" style="font-size:clamp(22px,3vw,42px)">Sette minuti, <i>una</i> risposta</h3>
+              <div class="pg__list" style="margin-top:14px">
+                <div><b>Dati</b><span>Grandi, pochi, fermi. Si leggono a tre metri dal televisore, in monospaziato.</span></div>
+                <div><b>Grafici</b><span>Si disegnano, non si generano: un grafico generato è un grafico inventato.</span></div>
+                <div><b>Voce</b><span>Dice perché una cosa è successa, non cosa succederà.</span></div>
+                <div><b>Verdetto</b><span>Un solo numero-chiave in giallo, mai più di uno a schermo.</span></div>
+              </div></div>
+            <div class="pg__folio"><span>Pomeriggio · 15–19</span><span>11</span></div>
+          </div>
+        </article>
+
+        <!-- 6 · tasto rosso -->
+        <article class="spread" aria-label="Pagine 12 e 13">
+          <div class="pg pg--dark">
+            <div class="pg__folio"><span>Come vederci</span><span>N. 01</span></div>
+            <div><div class="pg__k">HbbTV</div><h3 class="pg__h" style="font-size:clamp(22px,3vw,42px)">Tasto rosso, posizione otto</h3>
+              <div class="pg__list" style="margin-top:14px">
+                <div><b>01</b><span>Sintonizza il canale 403 su qualsiasi televisore DVB-T2.</span></div>
+                <div><b>02</b><span>Connetti la TV a internet: il segnale passa in Full HD da solo.</span></div>
+                <div><b>03</b><span>Premi il tasto rosso: il menu della rete scorre sopra la diretta.</span></div>
+                <div><b>04</b><span>Scendi fino all'ottava voce. Niente app, niente abbonamenti.</span></div>
+              </div></div>
+            <div class="pg__folio"><span>DVB-T2 · HbbTV · Full HD</span><span>12</span></div>
+          </div>
+          <div class="pg pg--ar">
+            <div class="pg__folio"><span>Full Gas</span><span>Una rete Nexum</span></div>
+            <div class="pg__big">403<small>Canale · tasto rosso · posizione 08</small></div>
+            <div class="pg__folio"><span>nexumchannel.com</span><span>13</span></div>
+          </div>
+        </article>
+
+      </div>
+      <div class="sfoglia__nav">
+        <button class="btn btn--ghost btn--sm" data-prev type="button">← Indietro</button>
+        <span class="sfoglia__count">Doppia <b data-cur>1</b> di <b data-tot>6</b></span>
+        <button class="btn btn--ghost btn--sm" data-next type="button">Avanti →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="scanline" aria-hidden="true"></div></div>
+
+<!-- ============ LEGGI DI FILA ============ -->
+<section class="sez" id="leggi">
+  <div class="wrap">
+
+    <article class="articolo reveal" id="a-editoriale">
+      <p class="rubrica">Editoriale · pag. 02</p>
+      <h2>Storie che vanno a benzina</h2>
+      <p class="lead">Un canale motori si può fare in due modi. Full Gas sceglie il secondo.</p>
+      <div class="corpo dropcap">
+        <p>Da lontano, con il configuratore acceso e la macchina lucida come plastica; o da vicino, con la polvere che ha addosso, in una strada vera, in un capannone vero. Il primo modo è pubblicità, anche quando è bellissimo. Il secondo è documentario, ed è il nostro.</p>
+        <p>Si sta vicini alle cose: lamiera, pelle, gomma, olio, il freddo del mattino in officina. La luce è quella che c'è: il sole basso del mattino e del tardo pomeriggio, le plafoniere dell'officina con le loro dominanti, il controluce quando c'è un motivo, vapore, polvere, fumo di scarico. Il repertorio si mostra per quello che è, grana compresa. Il testo entra solo quando porta un dato che la voce non può dare: una cifra, una data, un nome, un'unità di misura.</p>
+        <p>Questo numero uno è fatto così. Lo speciale al Gazometro, tre moto viste sul posto, una pagina d'archivio, una d'officina. E l'ultima, che dice come trovarci: canale 403, tasto rosso, posizione otto.</p>
+      </div>
+    </article>
+
+    <article class="articolo reveal" id="a-speciale">
+      <p class="rubrica">Speciale · pag. 04</p>
+      <h2>Il Gazometro accende i motori</h2>
+      <p class="articolo__meta"><b>Roma Ostiense</b><span>25–27 settembre 2026</span><span>Decima edizione</span><span>Eternal City Moto Show</span></p>
+      <p class="lead">Tre giorni sotto il gasometro più alto d'Italia: oltre trenta case, prove su strada e una parata notturna di mille moto fino al centro di Roma.</p>
+      <figure><img src="assets/img/gazometro-rust.jpg" alt="La struttura del Gazometro a luce radente" loading="lazy"><figcaption>Atto I · il luogo · la struttura a luce radente</figcaption></figure>
+      <div class="corpo dropcap">
+        <p>Il Gazometro di Roma è la struttura che si vede da tutta la parte sud della città: un cilindro di ferro a traliccio, costruito fra il 1935 e il 1937 dall'Ansaldo, che per decenni ha contenuto il gas illuminante della capitale ed è stato il gasometro più grande d'Italia. Oggi la campana non c'è più e resta lo scheletro, che è la cosa più bella: anelli e colonne di acciaio chiodato che il sole basso attraversa come una lanterna.</p>
+        <p>È qui, per la prima volta in dieci edizioni, che il salone romano della moto ha portato il suo villaggio. Funziona in un modo semplice: si arriva con il proprio casco, ci si registra allo stand della casa e si esce in demo ride sui modelli nuovi. Oltre trenta costruttori, dalle adventure alle naked, dagli scooter alle elettriche, con i corsi di tecnica di guida e uno spazio per i bambini. La decima edizione ha aggiunto un giorno intero al programma, con l'obiettivo dichiarato di superare i trentamila visitatori dell'anno prima, e ha portato a Ostiense la scena custom internazionale: l'artista e tatuatore Darren McKeag e il customizer newyorkese Bob Seeger, della leggendaria officina Indian Larry.</p>
+        <p>Il momento che dà il titolo allo speciale è la sera di sabato. Fino a mille motociclisti si sono messi in fila nel Village e sono partiti insieme, in un'unica sfilata notturna, dal Gazometro verso le strade del centro, con il Moto Club Polizia di Stato a garantire sicurezza e spettacolo. Lo raccontiamo da bordo strada, con la camera bassa e la luce che c'è: i lampioni al sodio, l'asfalto che restituisce i fari, il rumore che cambia quando la colonna passa sotto un ponte.</p>
+        <p>Lo speciale va in onda in prima serata su Full Gas, canale 403, ed è costruito in tre atti come i documentari del canale: il luogo prima delle cose, le cose prima dei dettagli. <a href="speciale-gazometro.html" style="color:var(--ignition)">La pagina dello speciale</a> racconta i tre atti uno per uno.</p>
+      </div>
+    </article>
+
+    <article class="articolo reveal" id="a-moto">
+      <p class="rubrica">Speciale · pag. 06</p>
+      <h2>Tre moto che valevano il viaggio</h2>
+      <p class="lead">Fra gli stand, tre cose che la camera ha seguito più delle altre. E una quarta che ha fermato tutti.</p>
+      <div class="corpo dropcap">
+        <p>La <b>Royal Enfield Flying Flea C6</b>, elettrica, al suo debutto italiano: un telaio in alluminio e una forcella anteriore a parallelogramma che sembra uscita dagli anni Trenta e invece è il pezzo più nuovo del salone. È la moto che meglio racconta cosa sta succedendo alle due ruote: il futuro che si veste da passato senza vergognarsene.</p>
+        <p>Le nuove <b>Norton</b>, esposte e disponibili per le prove nel Village. E la <b>Moto Morini 3½ Sport</b>, che riporta un nome storico su un bicilindrico a V di 60 gradi da 32 cavalli e 30 newtonmetri, a un prezzo di listino di 4.190 euro: il numero che, in un salone di anteprime, ha fatto voltare più teste di tutti.</p>
+        <p>Nella sezione dei customizer, il pezzo che ha fermato tutti: una Royal Enfield con <b>due motori in serie</b>, due moto diventate una. Non si spiega a parole; si mostra da vicino, un dado alla volta. È esattamente il genere di cosa per cui il canale ha una macro.</p>
+      </div>
+      <div class="scheda" style="margin-top:8px">
+        <div><span>Flying Flea C6</span><span>Royal Enfield · elettrica · debutto italiano</span></div>
+        <div><span>Norton</span><span>Nuovi modelli · esposti e in prova</span></div>
+        <div><span>Moto Morini 3½ Sport</span><span>V2 a 60° · 32 CV · 30 Nm · 4.190 €</span></div>
+        <div><span>Custom</span><span>Royal Enfield bimotore in serie</span></div>
+      </div>
+    </article>
+
+    <article class="articolo reveal" id="a-archivio">
+      <p class="rubrica" style="color:var(--oro)">Archivio · pag. 08</p>
+      <h2>Un serbatoio alto come un palazzo</h2>
+      <p class="lead">Dal gas illuminante al distretto dell'innovazione: ottant'anni di un cilindro di ferro che Roma non ha mai smesso di guardare.</p>
+      <figure><img src="assets/img/ostiense-bw.jpg" alt="Ostiense: gru e capannoni dell'area industriale in bianco e nero" loading="lazy"><figcaption>Archivio · Ostiense in bianco e nero · il repertorio si mostra per quello che è</figcaption></figure>
+      <div class="corpo dropcap">
+        <p>Il più alto dei quattro gazometri di Roma fu costruito fra il 1935 e il 1937 dall'Ansaldo per l'officina del gas di via Ostiense, l'impianto che dal 1910 produceva il gas illuminante della città. La campana, che saliva e scendeva dentro il traliccio a seconda di quanto gas conteneva, è stata smontata; la struttura di guida è rimasta, e con i suoi novanta metri circa è diventata, senza che nessuno lo decidesse, uno dei profili che identificano Roma nello skyline del quadrante sud.</p>
+        <p>Dismesso come impianto nei primi anni Duemila, il Gazometro è oggi il cuore di un'area che l'Eni ha rimesso in vita come distretto dell'innovazione e luogo di eventi. È così che un serbatoio è diventato una piazza: la stessa piazza dove, per tre giorni di settembre, sono arrivate le moto.</p>
+        <p class="aparte" style="margin:26px 0 8px">«La grana e il formato sbagliato sono l'informazione: dicono che quella cosa è successa davvero, e tanto tempo fa.»<small>Dalla bibbia visiva di Full Gas</small></p>
+      </div>
+    </article>
+
+    <article class="articolo reveal" id="a-officina">
+      <p class="rubrica">Officina · pag. 10</p>
+      <h2>Come guardiamo una macchina</h2>
+      <p class="lead">La grammatica visiva del canale, spiegata con le regole che usiamo davvero in montaggio.</p>
+      <figure><img src="assets/img/kv-alfa.webp" alt="Un coupé italiano degli anni Sessanta a luce radente, nel buio dello studio" loading="lazy"><figcaption>L'Auto Storica · coupé anni Sessanta · luce radente, neri veri</figcaption></figure>
+      <div class="corpo dropcap">
+        <p>Ventiquattro-trentacinque millimetri per la scala: quanto è grande, dove sta, com'è fatto intorno. Cinquanta-ottantacinque per l'uomo che la guarda o la guida. Macro per la meccanica, che è il nostro primo piano vero. La profondità di campo si usa per dire qualcosa, non per fare bello: sfocare tutto tranne un dado è una frase, sfocare tutto sempre è un tic.</p>
+        <p>Luce disponibile per prima. Il sole basso taglia, fa brillare il metallo e lascia neri veri sotto la macchina; in officina si tengono le plafoniere che ci sono, con le loro dominanti, non una luce da studio finta messa a coprire tutto. Mai luce piatta frontale. I colori sono quelli del posto: asfalto, ruggine, alluminio, verde di campagna, grigio di capannone. Il colore forte lo porta la macchina, non lo sfondo.</p>
+        <p>Il movimento ha sempre un motivo, e il motivo si scrive accanto. Carrello avanti: ci si avvicina a qualcosa che si sta scoprendo. Carrello indietro: si mostra dove eravamo. Fissa: va benissimo, ed è la scelta giusta più spesso di quanto sembri, perché un motore acceso ripreso fermo si muove già da solo. E il ritmo non vuol dire stacchi: un'inquadratura lunga con dentro del movimento tiene più di quattro corte che non dicono niente.</p>
+        <p>Vietati, senza eccezioni: neon viola e ciano, grading da trailer, rallentatori senza motivo narrativo, la camera che scivola sempre e comunque, carrozzerie che sembrano plastica lucida, cruscotti con numeri inventati, esplosioni e derapate messe lì per far spettacolo.</p>
+      </div>
+    </article>
+
+    <article class="articolo reveal" id="a-tasto">
+      <p class="rubrica">Come vederci · pag. 12</p>
+      <h2>Tasto rosso, posizione otto</h2>
+      <p class="lead">Niente da installare, niente da sottoscrivere. La rete Nexum trasmette già sulla tua antenna.</p>
+      <div class="corpo">
+        <p>Sintonizza il canale 403 su qualsiasi televisore DVB-T2. Connetti la TV a internet: il sistema rileva la connessione e commuta in Full HD con i contenuti arricchiti. Premi il tasto rosso: si apre l'interfaccia Nexum, un menu che scorre sopra la diretta senza interromperla. Con le frecce del telecomando scendi fino all'ottava voce: Full Gas.</p>
+        <p><a class="btn btn--primary" href="index.html#hbbtv" style="margin-top:6px">Vedi come funziona</a></p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="brand/fg_lockup_mono_bianco.png" alt="Full Gas">
+        <p style="margin:0">Il canale motori della rete Nexum, la piattaforma editoriale multicanale sul digitale terrestre italiano. Canale 403, HbbTV, Full HD.</p>
+        <address><b style="color:var(--bianco)">Blue Vinyl Events S.r.l.s.</b><br>Via degli Olmetti 18, 00060 Formello (RM), Italia<br>P.IVA 17199591003</address>
+        <p style="margin:0"><a href="mailto:commerciale@nexumchannel.com">commerciale@nexumchannel.com</a> · <a href="tel:+393440793787">344 079 3787</a></p>
+        <div class="badges"><span class="pill">DVB-T2</span><span class="pill">HbbTV</span><span class="pill">LCN 403</span></div>
+      </div>
+      <div><h4>Canale</h4><ul>
+        <li><a href="index.html#programmi">Programmi</a></li><li><a href="index.html#palinsesto">Palinsesto</a></li><li><a href="speciale-gazometro.html">Speciale Gazometro</a></li><li><a href="magazine.html">Magazine</a></li><li><a href="index.html#hbbtv">Come vederci</a></li></ul></div>
+      <div><h4>Rete</h4><ul>
+        <li><a href="https://nexumchannel.com/canali" target="_blank" rel="noopener">Gli otto canali</a></li><li><a href="https://nexumchannel.com/palinsesto" target="_blank" rel="noopener">Palinsesto Nexum</a></li><li><a href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda in diretta</a></li><li><a href="https://nexumchannel.com/#hbbtv" target="_blank" rel="noopener">Come funziona HbbTV</a></li></ul></div>
+      <div><h4>Business</h4><ul>
+        <li><a href="https://nexumchannel.com/inserzionisti" target="_blank" rel="noopener">Area inserzionisti</a></li><li><a href="https://nexumchannel.com/inserzionisti#dati" target="_blank" rel="noopener">Dati di ascolto</a></li><li><a href="https://nexumchannel.com/inserzionisti#formati" target="_blank" rel="noopener">Formati pubblicitari</a></li><li><a href="https://nexumchannel.com/inserzionisti#contatti" target="_blank" rel="noopener">Contatti</a></li></ul></div>
+    </div>
+    <p class="small muted" style="margin:32px 0 0;font-size:12.5px;max-width:90ch">Fotografie del Gazometro: Gidipa, Sergio D'Afflitto, Livio Sapio (CC BY-SA 4.0) ed Emiliano Felicissimo (CC BY-SA 2.0), via <a href="https://commons.wikimedia.org/wiki/Category:Gazometro_(Rome)" target="_blank" rel="noopener" style="color:var(--bianco-2)">Wikimedia Commons</a>, ridimensionate. Immagine chiave del canale e marchi © Blue Vinyl Events S.r.l.s.</p>
+    <div class="footer__bottom">
+      <span>© <span data-anno>2026</span> Blue Vinyl Events S.r.l.s. — Full Gas, canale 403 digitale terrestre. Tutti i diritti riservati.</span>
+      <span><a href="https://nexumchannel.com/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://nexumchannel.com/cookie-policy" target="_blank" rel="noopener">Cookie</a> · <a href="https://nexumchannel.com/note-legali" target="_blank" rel="noopener">Note legali</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/fullgas.js"></script>
+</body>
+</html>

@@ -7,7 +7,8 @@ Sito statico di **Full Gas**, il canale motori della rete Nexum (canale 403 del 
 | file | cosa |
 |---|---|
 | `index.html` | Home: accensione, sigla nell'hero, chi è Full Gas, programmi in scorrimento orizzontale, la premiere di stasera (Gazometro disegnato su canvas, countdown, player YouTube, capitoli, short), dal Diario, palinsesto ad anello, magazine 3D, il Garage, televisore e telecomando, la rete Nexum |
-| `guarda.html` | La videoteca: lo speciale con i capitoli, la playlist dei caricamenti del canale (si aggiorna da sola), ogni video con il player ufficiale di YouTube, gli short |
+| `guarda.html` | La videoteca: lo speciale con i capitoli, la playlist dei caricamenti del canale (si aggiorna da sola), ogni video con il player ufficiale di YouTube, gli short, la fila degli altri canali della rete |
+| `rete.html` | La rete Nexum su YouTube: il monoscopio, il quadrante degli otto canali (fisso sotto la barra, tasti 1–8), per ogni canale l'ultimo video in evidenza, la griglia dei video, la fila degli short; lo schermo con il player ufficiale e le frecce per zappare; il flusso delle ultime uscite di tutta la rete; le campanelle |
 | `diario.html` + `diario/*.html` | Il Diario della redazione: otto articoli di settembre, generati da `content/diario/` |
 | `magazine.html` + `magazine/settembre-2026.html` | L'edicola e il numero 01 (settembre 2026): 14 doppie pagine da sfogliare o da leggere di fila, con il PDF |
 | `redazione.html` | Chi fa Full Gas, come lavora, contatti, kit stampa |
@@ -18,7 +19,8 @@ Sito statico di **Full Gas**, il canale motori della rete Nexum (canale 403 del 
 ## Come si aggiorna
 
 ```bash
-python3 tools/build.py          # genera gli articoli da content/diario, l'indice, il feed; allinea nav e footer ovunque
+python3 tools/build.py          # genera gli articoli da content/diario, l'indice, il feed; allinea nav, footer e blocchi della rete ovunque
+python3 tools/rete.py           # scarica i feed YouTube dei canali della rete e aggiorna lo snapshot (assets/data/rete.js)
 node tools/export.mjs settembre-2026   # og.jpg per i social e il PDF del numero (richiede playwright)
 ```
 
@@ -27,6 +29,17 @@ Un articolo nuovo è un file in `content/diario/` con un'intestazione JSON in co
 ## Si guarda qui, conta là
 
 Ogni video si riproduce nel player ufficiale di YouTube (`youtube-nocookie.com/embed`), caricato solo al click: la visualizzazione, il tempo di visione e l'iscrizione contano sul canale @FullGas403. La playlist della videoteca è quella dei caricamenti del canale (`UUH0v_efZqSS6ZmvFHaYiafg`), quindi si aggiorna da sola. I link "Iscriviti" usano `?sub_confirmation=1`.
+
+## La rete su YouTube
+
+I canali della rete stanno in `content/rete/canali.json`: posizione nel menu del tasto rosso, nome, genere, claim, descrizione, colore, stato, il canale YouTube (id `UC…`, handle, immagine profilo) e la scheda su nexumchannel.com. Nexum TV non ha un canale YouTube (`"youtube": null`): resta nel quadrante con il rimando alla diretta.
+
+I video arrivano dai **feed pubblici di YouTube**, senza chiave API: per ogni canale la playlist dei video lunghi (`UULF` + id), quella degli short (`UUSH` + id) e il feed del canale, quindici caricamenti ciascuna. Due strade, la stessa forma dei dati:
+
+- `python3 tools/rete.py` scarica i feed e scrive lo **snapshot** `assets/data/rete.js` (`window.FG_RETE`), che la pagina legge subito, anche da `file://`. Scarica una volta le immagini profilo in `assets/img/rete/` (`--avatar` per riscaricarle). Poi rigenera i blocchi `<!-- @rete-… -->` di tutte le pagine (monoscopio, quadrante, schede, campanelle, la griglia in home, la fila nella videoteca); `--pagine` fa solo questo, senza rete, ed è quello che fa anche `build.py`.
+- `api/rete.js` è una **funzione Vercel** (`GET /api/rete?ids=UC…,UC…`) che legge gli stessi feed dal vivo; la CDN la tiene 15 minuti. La pagina la chiama dopo il caricamento e, se risponde, aggiorna le liste. Su un hosting senza funzioni la chiamata fallisce in silenzio e resta lo snapshot: conviene rilanciare `tools/rete.py` ogni tanto e pubblicare.
+
+Le miniature sono quelle di YouTube (`i.ytimg.com`: `hq720`/`maxresdefault` per i video, `oar2` in verticale per gli short, con ripiego automatico). Ogni video si apre nello **schermo**, il player ufficiale `youtube-nocookie.com`, caricato solo al click: la visualizzazione conta sul canale. Sul quadrante: click, tasti da 1 a 8, frecce; `rete.html#salute24` apre la pagina già sintonizzata.
 
 ## Community
 

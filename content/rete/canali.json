@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "nexum-tv",
+    "pos": 1,
+    "nome": "Nexum TV",
+    "categoria": "Generalista",
+    "claim": "Il meglio di tutto l'universo Nexum.",
+    "descrizione": "Il palinsesto generalista della rete: magazine, talk, documentari e il meglio dei canali tematici in un unico flusso. È il canale che apri quando vuoi che sia Nexum a scegliere per te.",
+    "nota": "Nexum TV non ha un canale YouTube: si guarda in diretta, sul 403 e su nexumchannel.com.",
+    "stato": "live",
+    "colore": "#0A84FF",
+    "youtube": null,
+    "nexum": "https://nexumchannel.com/canali/nexum-tv",
+    "diretta": "https://nexumchannel.com/guarda"
+  },
+  {
+    "slug": "italian-horse-tv",
+    "pos": 2,
+    "nome": "Italian Horse TV",
+    "categoria": "Equitazione",
+    "claim": "Il cavallo, raccontato da chi lo conosce.",
+    "descrizione": "Il canale di riferimento in Italia per il mondo equestre: salto ostacoli, dressage, completo, allevamento e reportage dai campi gara nazionali e internazionali.",
+    "stato": "live",
+    "colore": "#C9A227",
+    "youtube": {
+      "id": "UCObMJ83X66vXWgT93bE4A3g",
+      "handle": "ITALIANHORSETV",
+      "nome": "ITALIAN HORSE TV",
+      "avatar": "https://yt3.googleusercontent.com/0eE5xZjbo5gZgZMw19U4llQHHNqqmwFN5M7dhNdG2K22pIgO3uKyWVqSbAe4Z9WLCj6rPLOJog=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "nexum": "https://nexumchannel.com/canali/italian-horse-tv"
+  },
+  {
+    "slug": "salute24",
+    "pos": 3,
+    "nome": "Salute24",
+    "categoria": "Salute",
+    "claim": "La salute spiegata bene.",
+    "descrizione": "Informazione medica autorevole e accessibile: prevenzione, specialisti in studio, approfondimenti su patologie e benessere. Rigore scientifico, linguaggio comprensibile.",
+    "stato": "live",
+    "colore": "#1ECD71",
+    "youtube": {
+      "id": "UCGWHJRTCV_ge3LTw24RAlwg",
+      "handle": "Salute24403",
+      "nome": "Salute24",
+      "avatar": "https://yt3.googleusercontent.com/6rK6Sp6nX6suhGpfFLykz3dbHRFu0cTR0KyjfXGkYE_Aaq-m2yF1IuyUSfnzBO4UtN_gmmb2=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "nexum": "https://nexumchannel.com/canali/salute24"
+  },
+  {
+    "slug": "xcapital",
+    "pos": 4,
+    "nome": "XCapital",
+    "categoria": "Finanza",
+    "claim": "I mercati, senza rumore di fondo.",
+    "descrizione": "Mercati finanziari, economia reale, investimenti e strategie patrimoniali. Analisi, interviste e rubriche quotidiane per chi vuole orientarsi nella finanza senza slogan.",
+    "stato": "live",
+    "colore": "#00EBA2",
+    "youtube": {
+      "id": "UC6IjLS3EQm_czoCqaF4uiYA",
+      "handle": "Xcapital403",
+      "nome": "Xcapital",
+      "avatar": "https://yt3.googleusercontent.com/XNmF0BVwTFIn_H8SeNHRwoo1sWDRrKNtLFJcH-ukJimnNvoheVzxI8EKqMmtLq2tuU0UiPQk=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "nexum": "https://nexumchannel.com/canali/xcapital"
+  },
+  {
+    "slug": "controradio",
+    "pos": 5,
+    "nome": "Controradio",
+    "categoria": "Calcio",
+    "claim": "Il calcio detto come va detto.",
+    "descrizione": "Calcio a 360 gradi: analisi tattica, commento tecnico, mercato e tutto quello che gira intorno al pallone, dalla Serie A ai campionati emergenti. La voce fuori dal coro che racconta Roma senza filtri.",
+    "stato": "live",
+    "colore": "#FCCE0B",
+    "youtube": {
+      "id": "UCyEqb6_JA7X0B5bh5cFgEsg",
+      "handle": "ControRadio403",
+      "nome": "ControRadio",
+      "avatar": "https://yt3.googleusercontent.com/uWw4i2tT3GQONmgO_IJ4iFe3bEUE9DLP0yVWD6e-w56tW-TwxgtgbbreFNEteOWSPTVbaEAk=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "nexum": "https://nexumchannel.com/canali/controradio"
+  },
+  {
+    "slug": "prime-event",
+    "pos": 6,
+    "nome": "Prime Event",
+    "categoria": "Musica",
+    "claim": "Il palco, sempre acceso.",
+    "descrizione": "Concerti, festival, eventi dal vivo e la scena musicale italiana e internazionale: dal pop all'elettronica, dalla classica all'indie. Su YouTube anche cinema, serie e spettacolo, con il format «Primo Take».",
+    "stato": "live",
+    "colore": "#01EAB8",
+    "youtube": {
+      "id": "UC0A016Mqby7vP5bwXejXiVg",
+      "handle": "PrimeEvent403",
+      "nome": "Prime Event Tv",
+      "avatar": "https://yt3.googleusercontent.com/JdZ5ei8szVplj8bP4W9Vm2bgC3SHY2pFpK_KCm2i1XuVnR12JFb9nfLuk4Np4YGTcwUKGc43wg=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "nexum": "https://nexumchannel.com/canali/prime-event"
+  },
+  {
+    "slug": "napoletano-style",
+    "pos": 7,
+    "nome": "Napoletano Style",
+    "categoria": "Cultura",
+    "claim": "Napoli, in tutte le sue lingue.",
+    "descrizione": "Il canale dedicato alla cultura, alla musica e al racconto del territorio napoletano: tradizione e contemporaneità, voci, luoghi e storie di una città che non sta mai ferma.",
+    "nota": "Il canale YouTube storico di Napoletano Style: i caricamenti più recenti risalgono al 2016.",
+    "stato": "in-arrivo",
+    "colore": "#008EEB",
+    "youtube": {
+      "id": "UCW-fQf46eS1ERNANp_VvI_Q",
+      "handle": "napoletanostyle2001",
+      "nome": "Napoletano Style",
+      "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_ma3cofI7Iz5p_ugOUBv4lkEt28p7ScOWgJF_v_LDl-Tw=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "nexum": "https://nexumchannel.com/canali/napoletano-style"
+  },
+  {
+    "slug": "full-gas",
+    "pos": 8,
+    "nome": "Full Gas",
+    "categoria": "Motori",
+    "claim": "Storie che vanno a benzina.",
+    "descrizione": "Il canale dedicato alle automobili: documentari, storie di macchine e di persone, curiosità e aneddoti dal mondo dei motori. Ritmo alto, montaggio nervoso, zero filler.",
+    "stato": "in-arrivo",
+    "colore": "#FE4309",
+    "youtube": {
+      "id": "UCH0v_efZqSS6ZmvFHaYiafg",
+      "handle": "FullGas403",
+      "nome": "Full Gas",
+      "avatar": "https://yt3.googleusercontent.com/VAwW0vCKnjjP-TWGCXeWyAGk7Ab-uN3mxI6jHXsUqu8JgMSR34Kv8JsOJ_VtgoilZ5e-QiwAiA=s176-c-k-c0x00ffffff-no-rj"
+    },
+    "nexum": "https://nexumchannel.com/canali/full-gas",
+    "sito": "guarda.html"
+  }
+]

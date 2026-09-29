@@ -89,7 +89,7 @@ section{position:relative}
 .brand .brand__mark{height:30px}
 .brand .brand__name{font-family:var(--f-titoli);font-weight:800;font-stretch:118%;text-transform:uppercase;letter-spacing:.02em;font-size:15px;color:var(--bianco)}
 .nav__links{display:flex;gap:4px;margin-left:8px}
-.nav__links a{padding:9px 11px;border-radius:99px;font-size:13.5px;font-weight:600;color:var(--bianco-2);transition:background .2s,color .2s}
+.nav__links a{padding:9px 9px;border-radius:99px;font-size:13px;font-weight:600;color:var(--bianco-2);white-space:nowrap;transition:background .2s,color .2s}
 .nav__links a:hover,.nav__links a[aria-current="page"]{color:var(--bianco);background:rgba(245,240,235,.07)}
 .nav__cta{margin-left:auto;display:flex;align-items:center;gap:10px}
 .nav__burger{display:none;width:44px;height:44px;border-radius:99px;border:1px solid var(--line-2);place-items:center;margin-left:auto}
@@ -99,7 +99,7 @@ section{position:relative}
 .nav.is-open .nav__burger span{background:transparent}
 .nav.is-open .nav__burger span::before{transform:translateY(6px) rotate(45deg)}
 .nav.is-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg)}
-@media(max-width:1120px){
+@media(max-width:1200px){
   .nav__links{position:fixed;inset:var(--nav-h) 0 auto;background:rgba(11,12,14,.96);backdrop-filter:blur(16px);flex-direction:column;padding:16px var(--gutter) 24px;border-bottom:1px solid var(--line);display:none}
   .nav.is-open .nav__links{display:flex}
   .nav__links a{font-size:18px;padding:14px 12px}
@@ -281,6 +281,12 @@ section{position:relative}
 .rete small{font-family:var(--f-dati);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--titanio)}
 @media(max-width:900px){.rete{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.rete{grid-template-columns:1fr}}
+.rete--yt a{grid-template-columns:auto 1fr;grid-template-rows:auto auto auto;column-gap:14px;row-gap:6px;align-items:center}
+.rete--yt a:hover{border-color:var(--c)}
+.rete--yt a.is-fg{border-color:rgba(254,67,9,.45)}
+.rete--yt img{grid-row:1/4;width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--line-2);background:var(--asfalto);align-self:start}
+.rete--yt b i{background:var(--c)}
+.rete--yt small{line-height:1.6}
 
 /* --- footer --- */
 .footer{border-top:1px solid var(--line);padding:clamp(48px,6vw,80px) 0 40px;background:var(--asfalto-2)}

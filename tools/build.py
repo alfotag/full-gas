@@ -10,7 +10,9 @@ Cosa fa, in ordine:
    pagina fra i marcatori `<!-- @nav -->…<!-- /@nav -->` e `<!-- @footer -->…<!-- /@footer -->`,
    così restano uguali dappertutto;
 3. aggiorna le schede "dal diario" nelle pagine che le chiedono con
-   `<!-- @diario:3 -->…<!-- /@diario -->`.
+   `<!-- @diario:3 -->…<!-- /@diario -->`;
+4. rigenera i blocchi della rete Nexum (`<!-- @rete-… -->`, vedi tools/rete.py) dai
+   canali in `content/rete/canali.json`, senza toccare la rete.
 
 Uso:  python3 tools/build.py
 Nessuna dipendenza oltre alla libreria standard.
@@ -35,6 +37,7 @@ ROMA = timezone(timedelta(hours=2))
 NAV_ITEMS = [
     ("index.html#canale", "Il canale"),
     ("guarda.html", "Guarda"),
+    ("rete.html", "La rete"),
     ("index.html#programmi", "Programmi"),
     ("diario.html", "Diario"),
     ("magazine.html", "Magazine"),
@@ -78,7 +81,7 @@ def footer(root: str) -> str:
       <div><h4>Editoria</h4><ul>
         <li><a href="{root}diario.html">Il Diario</a></li><li><a href="{root}magazine.html">Il Magazine</a></li><li><a href="{root}magazine/settembre-2026.html">Numero 01 · Settembre 2026</a></li><li><a href="{root}speciale-gazometro.html">Speciale Gazometro</a></li><li><a href="{root}redazione.html">La redazione</a></li><li><a href="{root}garage.html">Il Garage</a></li></ul></div>
       <div><h4>Rete e business</h4><ul>
-        <li><a href="https://nexumchannel.com/canali" target="_blank" rel="noopener">Gli otto canali Nexum</a></li><li><a href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda in diretta</a></li><li><a href="https://nexumchannel.com/inserzionisti" target="_blank" rel="noopener">Area inserzionisti</a></li><li><a href="https://nexumchannel.com/inserzionisti#dati" target="_blank" rel="noopener">Dati di ascolto</a></li><li><a href="https://nexumchannel.com/inserzionisti#contatti" target="_blank" rel="noopener">Contatti</a></li></ul></div>
+        <li><a href="{root}rete.html">La rete su YouTube</a></li><li><a href="https://nexumchannel.com/canali" target="_blank" rel="noopener">Gli otto canali Nexum</a></li><li><a href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda in diretta</a></li><li><a href="https://nexumchannel.com/inserzionisti" target="_blank" rel="noopener">Area inserzionisti</a></li><li><a href="https://nexumchannel.com/inserzionisti#dati" target="_blank" rel="noopener">Dati di ascolto</a></li><li><a href="https://nexumchannel.com/inserzionisti#contatti" target="_blank" rel="noopener">Contatti</a></li></ul></div>
     </div>
     <p class="small muted" style="margin:32px 0 0;font-size:12.5px;max-width:90ch">Fotografie del Gazometro: Gidipa, Sergio D'Afflitto, Livio Sapio (CC BY-SA 4.0) ed Emiliano Felicissimo (CC BY-SA 2.0), via <a href="https://commons.wikimedia.org/wiki/Category:Gazometro_(Rome)" target="_blank" rel="noopener" style="color:var(--bianco-2)">Wikimedia Commons</a>, ridimensionate. Fotogrammi dei video, immagine chiave e marchi © Blue Vinyl Events S.r.l.s.</p>
     <div class="footer__bottom">
@@ -191,6 +194,10 @@ def write_feed(arts):
 
 # ---------------------------------------------------------------------------
 def main():
+    global rete, canali_rete
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import rete
+    canali_rete = rete.leggi_canali()
     arts = read_articles()
     template = open(os.path.join(ROOT, "tools", "templates", "articolo.html"), encoding="utf-8").read()
     for i, a in enumerate(arts):
@@ -208,6 +215,7 @@ def main():
         current = os.path.basename(rel) if root == "" else "magazine.html"
         new = replace_block(html, "nav", nav(root, current))
         new = replace_block(new, "footer", footer(root))
+        new = rete.applica_blocchi(new, root, canali_rete)
         m = re.search(r"<!-- @diario:(\d+)(?::big)? -->", new)
         if m:
             n = int(m.group(1)); big = ":big" in m.group(0)

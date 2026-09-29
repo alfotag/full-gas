@@ -9,7 +9,7 @@ import { serve } from './serve.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.resolve(process.argv[2] || path.join(root, 'tools', '.shots'));
 mkdirSync(out, { recursive: true });
-const pages = ['index.html', 'speciale-gazometro.html', 'magazine.html'];
+const pages = ['index.html', 'rete.html', 'guarda.html', 'speciale-gazometro.html', 'magazine.html'];
 const views = [{ name: 'desktop', width: 1440, height: 900 }, { name: 'phone', width: 390, height: 844, mobile: true }];
 
 const srv = await serve(root);

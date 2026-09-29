@@ -46,6 +46,13 @@
 .shorts-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:900px){.shorts-row{grid-template-columns:repeat(2,1fr)}}
 
+/* --- la fila compatta dei canali della rete --- */
+.mini-rete{display:flex;flex-wrap:wrap;gap:8px}
+.mini-rete a{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 16px 0 6px;border-radius:99px;border:1px solid var(--line);background:var(--grafite);font-family:var(--f-titoli);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.02em;color:var(--bianco-2);transition:border-color .2s,transform .2s var(--ease-out),color .2s}
+.mini-rete a:hover{border-color:var(--c);color:var(--bianco);transform:translateY(-2px)}
+.mini-rete img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--line-2);background:var(--asfalto)}
+.mini-rete .n{font-family:var(--f-dati);font-size:10px;letter-spacing:.1em;color:var(--c);font-weight:500}
+
 /* --- diario --- */
 .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
 @media(max-width:980px){.posts{grid-template-columns:repeat(2,1fr)}}

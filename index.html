@@ -11,12 +11,16 @@
 <meta property="og:description" content="Il canale motori della rete Nexum. Canale 403, tasto rosso, posizione 8. Stasera alle 21:00 la premiere dello speciale.">
 <meta property="og:image" content="assets/img/yt/premiere.jpg">
 <meta property="og:type" content="website">
-<link rel="icon" href="brand/fg_mark_arancio.png" type="image/png">
+<link rel="icon" href="favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Full Gas · Il Diario" href="feed.xml">
 <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fullgas.css">
 <link rel="stylesheet" href="assets/css/motion.css">
 <link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="assets/css/editoria.css">
 <noscript><style>.fade-up,.reveal{opacity:1!important;transform:none!important}.ignition,.cursor,.gauge{display:none!important}</style></noscript>
 </head>
 <body data-state="before">
@@ -36,23 +40,26 @@
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="page-grain" aria-hidden="true"></div>
 
+<!-- @nav -->
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Full Gas, home"><img class="brand__mark" src="brand/fg_mark_arancio.png" alt=""><span class="brand__name">Full Gas</span></a>
     <nav class="nav__links" aria-label="Principale">
-      <a href="#canale">Il canale</a>
-      <a href="#programmi">Programmi</a>
-      <a href="#stasera">Stasera</a>
-      <a href="#palinsesto">Palinsesto</a>
-      <a href="#magazine">Magazine</a>
-      <a href="#hbbtv">Come vederci</a>
+      <a href="index.html#canale">Il canale</a>
+      <a href="guarda.html">Guarda</a>
+      <a href="index.html#programmi">Programmi</a>
+      <a href="diario.html">Diario</a>
+      <a href="magazine.html">Magazine</a>
+      <a href="redazione.html">Redazione</a>
+      <a href="garage.html">Garage</a>
     </nav>
     <div class="nav__cta">
-      <a class="nav__live" href="#stasera" data-state="before"><i class="dot dot--pulse"></i><span data-live-label>Premiere 21:00</span><b data-cd-mini>--:--:--</b></a>
+      <a class="nav__live" href="index.html#stasera" data-state="before"><i class="dot dot--pulse"></i><span data-live-label>Premiere 21:00</span><b data-cd-mini>--:--:--</b></a>
       <button class="nav__burger" aria-label="Apri il menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
+<!-- /@nav -->
 
 <main id="main">
 
@@ -76,7 +83,7 @@
         <div class="hero__actions fade-up" data-delay="3">
           <a class="btn btn--primary" href="#programmi">I programmi
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn--ghost" href="#canale">Chi siamo</a>
+          <a class="btn btn--ghost" href="guarda.html">Guarda i video</a>
           <a class="btn btn--ghost" href="#hbbtv">Come vederci</a>
         </div>
         <div class="hero__stats hero__stats--tight fade-up" data-delay="4">
@@ -241,12 +248,44 @@
         <span class="short__play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3l16 9-16 9z"/></svg></span>
         <span class="short__cap"><span class="short__k">Short · vox pop</span><span class="short__t">La missione di Claudia: qual è la tua moto preferita?</span></span>
       </a>
-      <a class="short short--epi fade-up" data-delay="2" href="https://www.youtube.com/watch?v=TLMueRQ6Qg8" target="_blank" rel="noopener">
+      <a class="short fade-up" data-delay="2" href="https://www.youtube.com/shorts/OYVZOgriDhE" target="_blank" rel="noopener">
+        <img src="assets/img/yt/telo-v.jpg" alt="Tre bagger sotto il telo al Killer Bagger Contest" loading="lazy">
+        <span class="short__play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3l16 9-16 9z"/></svg></span>
+        <span class="short__cap"><span class="short__k">Short · Killer Bagger</span><span class="short__t">Cosa c'era sotto il telo? 👀</span></span>
+      </a>
+      <a class="short short--epi fade-up" data-delay="3" href="https://www.youtube.com/watch?v=TLMueRQ6Qg8" target="_blank" rel="noopener">
         <img src="assets/img/yt/bugatti.jpg" alt="Bugatti Tourbillon: il paradosso dell'elettrico" loading="lazy">
         <span class="short__play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3l16 9-16 9z"/></svg></span>
         <span class="short__cap"><span class="short__k">Il Dettaglio · l'episodio precedente</span><span class="short__t">Bugatti Tourbillon: il paradosso dell'elettrico</span><p>L'elettrico dà la risposta immediata; il V16 conserva il carattere meccanico. Due minuti e mezzo da guardare prima di stasera.</p></span>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ============ DAL DIARIO ============ -->
+<section class="sez" id="diario">
+  <div class="wrap">
+    <div class="sez-head sez-head--split">
+      <div><p class="eyebrow fade-up">Il Diario</p><h2 class="h-big" data-split>Quello che<br>non entra nel video.</h2></div>
+      <p class="lead fade-up" data-delay="2">Dietro le quinte, Il Dettaglio con le fonti, le special da vicino, il mese in date. La redazione scrive con le stesse regole con cui gira.</p>
+    </div>
+    <div class="posts">
+<!-- @diario:3 -->
+<a class="post fade-up" href="diario/2026-09-30-perche-ci-stiamo-vicini.html">
+        <div class="post__img"><img src="assets/img/kv-alfa.webp" alt="" loading="lazy"><span class="pill">La linea</span></div>
+        <div class="post__body"><div class="post__k">La linea<span>30 settembre 2026 · 4 min</span></div><h3 class="post__t">Perché ci stiamo <em>vicini</em></h3><p class="post__d">Un canale motori si può fare in due modi. Questo è il nostro, spiegato con le regole che usiamo davvero: la luce che c'è, la grana che resta, il testo che entra solo quando porta un dato.</p></div>
+      </a>
+<a class="post fade-up" href="diario/2026-09-29-dietro-le-quinte-gazometro.html">
+        <div class="post__img"><img src="assets/img/yt/premiere.jpg" alt="" loading="lazy"><span class="pill">Dietro le quinte</span></div>
+        <div class="post__body"><div class="post__k">Dietro le quinte<span>29 settembre 2026 · 6 min</span></div><h3 class="post__t">Dietro le quinte: come abbiamo girato lo speciale al <em>Gazometro</em></h3><p class="post__d">Tre giorni, due conduttori, sei capitoli e una sola domanda per tutti. Cosa c'è dietro i trentaquattro minuti che vanno in premiere stasera alle 21:00, e perché il quarto capitolo è diverso dagli altri.</p></div>
+      </a>
+<a class="post fade-up" href="diario/2026-09-29-qual-e-la-tua-moto-preferita.html">
+        <div class="post__img"><img src="assets/img/yt/claudia.jpg" alt="" loading="lazy"><span class="pill">Il Garage</span></div>
+        <div class="post__body"><div class="post__k">Il Garage<span>29 settembre 2026 · 2 min</span></div><h3 class="post__t">Qual è la tua moto <em>preferita?</em></h3><p class="post__d">La domanda che Claudia ha fatto a tutto il Gazometro è la domanda del mese. Si risponde nei commenti su YouTube, oppure dal Garage: scegli la tua, il testo si copia da solo e ti porta al video.</p></div>
+      </a>
+<!-- /@diario -->
+    </div>
+    <div class="hero__actions fade-up" style="margin-top:26px"><a class="btn btn--ghost" href="diario.html">Tutto il Diario</a><a class="btn btn--ghost" href="guarda.html">Tutti i video</a></div>
   </div>
 </section>
 
@@ -337,6 +376,35 @@
   </div>
 </section>
 
+<!-- ============ IL GARAGE ============ -->
+<section class="sez" id="garage">
+  <div class="wrap">
+    <div class="sez-head sez-head--split">
+      <div><p class="eyebrow fade-up">Il Garage</p><h2 class="h-big" data-split>Entra.<br>Le mani sporche le hai già.</h2></div>
+      <p class="lead fade-up" data-delay="2">La domanda del mese di Claudia, la mail del lunedì, il modo per mandarci la tua moto. Si guarda qui, si commenta su YouTube, e il canale cresce là.</p>
+    </div>
+    <div class="garage-grid">
+      <div class="box box--ar fade-up">
+        <span class="box__n">La domanda del mese</span>
+        <h3>Qual è la tua moto preferita?</h3>
+        <p>Scegli o scrivi la tua dal Garage: il testo si copia da solo e si apre il video per incollarlo nel commento. Le risposte più belle finiscono nel Magazine di ottobre.</p>
+        <div class="hero__actions" style="margin-top:6px"><a class="btn btn--primary" href="garage.html#domanda">Rispondi a Claudia</a><a class="btn btn--ghost" href="https://www.youtube.com/shorts/rS80Dlt1F_g" target="_blank" rel="noopener">Lo short ↗</a></div>
+      </div>
+      <div class="box fade-up" data-delay="1">
+        <span class="box__n">La benzina del lunedì</span>
+        <h3>Una mail a settimana. Niente altro.</h3>
+        <p>Cosa esce, cosa abbiamo girato, dove andiamo. Il lunedì mattina, cinque righe e un link.</p>
+        <form class="form" data-newsletter novalidate>
+          <label for="email-home">La tua mail</label>
+          <div class="row"><input id="email-home" name="email" type="email" required placeholder="nome@esempio.it" autocomplete="email"><button class="btn btn--primary" type="submit">Iscrivimi</button></div>
+          <p class="ok">Fatto. La prossima Benzina del lunedì arriva lunedì mattina. Daje gas!</p>
+          <p class="privacy">Solo per la newsletter. Titolare: Blue Vinyl Events S.r.l.s. · <a href="https://nexumchannel.com/privacy" target="_blank" rel="noopener">informativa</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ RETE ============ -->
 <section class="sez" id="rete" style="background:var(--asfalto-2);border-block:1px solid var(--line)">
   <div class="wrap">
@@ -370,6 +438,7 @@
 
 </main>
 
+<!-- @footer -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
@@ -378,22 +447,23 @@
         <p style="margin:0">Il canale motori della rete Nexum, la piattaforma editoriale multicanale sul digitale terrestre italiano. Canale 403, HbbTV, Full HD.</p>
         <address><b style="color:var(--bianco)">Blue Vinyl Events S.r.l.s.</b><br>Via degli Olmetti 18, 00060 Formello (RM), Italia<br>P.IVA 17199591003</address>
         <p style="margin:0"><a href="mailto:commerciale@nexumchannel.com">commerciale@nexumchannel.com</a> · <a href="tel:+393440793787">344 079 3787</a></p>
-        <div class="badges"><span class="pill">DVB-T2</span><span class="pill">HbbTV</span><span class="pill">LCN 403</span><a class="pill pill--ar" href="https://www.youtube.com/@FullGas403" target="_blank" rel="noopener">YouTube ↗</a></div>
+        <div class="badges"><span class="pill">DVB-T2</span><span class="pill">HbbTV</span><span class="pill">LCN 403</span><a class="pill pill--ar" href="https://www.youtube.com/@FullGas403?sub_confirmation=1" target="_blank" rel="noopener">YouTube ↗</a><a class="pill" href="feed.xml">RSS</a></div>
       </div>
       <div><h4>Canale</h4><ul>
-        <li><a href="#canale">Il canale</a></li><li><a href="#programmi">Programmi</a></li><li><a href="#stasera">Stasera · la premiere</a></li><li><a href="#palinsesto">Palinsesto</a></li><li><a href="speciale-gazometro.html">Speciale Gazometro</a></li><li><a href="magazine.html">Magazine</a></li><li><a href="#hbbtv">Come vederci</a></li></ul></div>
-      <div><h4>Rete</h4><ul>
-        <li><a href="https://nexumchannel.com/canali" target="_blank" rel="noopener">Gli otto canali</a></li><li><a href="https://nexumchannel.com/palinsesto" target="_blank" rel="noopener">Palinsesto Nexum</a></li><li><a href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda in diretta</a></li><li><a href="https://nexumchannel.com/#hbbtv" target="_blank" rel="noopener">Come funziona HbbTV</a></li></ul></div>
-      <div><h4>Business</h4><ul>
-        <li><a href="https://nexumchannel.com/inserzionisti" target="_blank" rel="noopener">Area inserzionisti</a></li><li><a href="https://nexumchannel.com/inserzionisti#dati" target="_blank" rel="noopener">Dati di ascolto</a></li><li><a href="https://nexumchannel.com/inserzionisti#formati" target="_blank" rel="noopener">Formati pubblicitari</a></li><li><a href="https://nexumchannel.com/inserzionisti#contatti" target="_blank" rel="noopener">Contatti</a></li></ul></div>
+        <li><a href="index.html#canale">Il canale</a></li><li><a href="guarda.html">Guarda i video</a></li><li><a href="index.html#programmi">Programmi</a></li><li><a href="index.html#stasera">Stasera · la premiere</a></li><li><a href="index.html#palinsesto">Palinsesto</a></li><li><a href="index.html#hbbtv">Come vederci</a></li></ul></div>
+      <div><h4>Editoria</h4><ul>
+        <li><a href="diario.html">Il Diario</a></li><li><a href="magazine.html">Il Magazine</a></li><li><a href="magazine/settembre-2026.html">Numero 01 · Settembre 2026</a></li><li><a href="speciale-gazometro.html">Speciale Gazometro</a></li><li><a href="redazione.html">La redazione</a></li><li><a href="garage.html">Il Garage</a></li></ul></div>
+      <div><h4>Rete e business</h4><ul>
+        <li><a href="https://nexumchannel.com/canali" target="_blank" rel="noopener">Gli otto canali Nexum</a></li><li><a href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda in diretta</a></li><li><a href="https://nexumchannel.com/inserzionisti" target="_blank" rel="noopener">Area inserzionisti</a></li><li><a href="https://nexumchannel.com/inserzionisti#dati" target="_blank" rel="noopener">Dati di ascolto</a></li><li><a href="https://nexumchannel.com/inserzionisti#contatti" target="_blank" rel="noopener">Contatti</a></li></ul></div>
     </div>
-    <p class="small muted" style="margin:32px 0 0;font-size:12.5px;max-width:90ch">Fotografie del Gazometro: Gidipa, Sergio D'Afflitto, Livio Sapio (CC BY-SA 4.0) ed Emiliano Felicissimo (CC BY-SA 2.0), via <a href="https://commons.wikimedia.org/wiki/Category:Gazometro_(Rome)" target="_blank" rel="noopener" style="color:var(--bianco-2)">Wikimedia Commons</a>, ridimensionate. Fotogrammi dello speciale, immagine chiave e marchi © Blue Vinyl Events S.r.l.s.</p>
+    <p class="small muted" style="margin:32px 0 0;font-size:12.5px;max-width:90ch">Fotografie del Gazometro: Gidipa, Sergio D'Afflitto, Livio Sapio (CC BY-SA 4.0) ed Emiliano Felicissimo (CC BY-SA 2.0), via <a href="https://commons.wikimedia.org/wiki/Category:Gazometro_(Rome)" target="_blank" rel="noopener" style="color:var(--bianco-2)">Wikimedia Commons</a>, ridimensionate. Fotogrammi dei video, immagine chiave e marchi © Blue Vinyl Events S.r.l.s.</p>
     <div class="footer__bottom">
       <span>© <span data-anno>2026</span> Blue Vinyl Events S.r.l.s. — Full Gas, canale 403 digitale terrestre. Tutti i diritti riservati.</span>
       <span><a href="https://nexumchannel.com/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://nexumchannel.com/cookie-policy" target="_blank" rel="noopener">Cookie</a> · <a href="https://nexumchannel.com/note-legali" target="_blank" rel="noopener">Note legali</a></span>
     </div>
   </div>
 </footer>
+<!-- /@footer -->
 
 <!-- contagiri di scorrimento -->
 <div class="gauge" id="gauge" role="button" tabindex="0" aria-label="Torna in cima">
@@ -409,6 +479,7 @@
   <span class="gauge__tip">Torna in cima</span>
 </div>
 
+<script src="assets/js/config.js"></script>
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/lenis.min.js"></script>

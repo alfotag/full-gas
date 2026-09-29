@@ -284,3 +284,5 @@ body[data-state="live"] .tonight__cd b{color:var(--ignition)}
   .stasera .cd__cell b{font-size:clamp(40px,14vw,60px)}
   .kin__line{font-size:clamp(44px,15vw,64px)}
 }
+
+@media(max-height:1040px){.hero--canale .scroll-cue{display:none}}

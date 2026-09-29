@@ -6,9 +6,33 @@ Sito statico di **Full Gas**, il canale motori della rete Nexum (canale 403 del 
 
 | file | cosa |
 |---|---|
-| `index.html` | Home: accensione, sigla nell'hero, chi è Full Gas, programmi in scorrimento orizzontale, la premiere di stasera (Gazometro disegnato su canvas, countdown, player YouTube, capitoli, shorts), palinsesto ad anello con l'ora di adesso, magazine 3D, televisore e telecomando, la rete Nexum |
+| `index.html` | Home: accensione, sigla nell'hero, chi è Full Gas, programmi in scorrimento orizzontale, la premiere di stasera (Gazometro disegnato su canvas, countdown, player YouTube, capitoli, short), dal Diario, palinsesto ad anello, magazine 3D, il Garage, televisore e telecomando, la rete Nexum |
+| `guarda.html` | La videoteca: lo speciale con i capitoli, la playlist dei caricamenti del canale (si aggiorna da sola), ogni video con il player ufficiale di YouTube, gli short |
+| `diario.html` + `diario/*.html` | Il Diario della redazione: otto articoli di settembre, generati da `content/diario/` |
+| `magazine.html` + `magazine/settembre-2026.html` | L'edicola e il numero 01 (settembre 2026): 14 doppie pagine da sfogliare o da leggere di fila, con il PDF |
+| `redazione.html` | Chi fa Full Gas, come lavora, contatti, kit stampa |
+| `garage.html` | La community: la domanda del mese, la newsletter, manda la tua moto, gli appuntamenti |
 | `speciale-gazometro.html` | Lo speciale *Eternal City Moto Show 2026*: player con i capitoli al minuto, sei capitoli, i protagonisti, fonti |
-| `magazine.html` | *Full Gas Magazine* n. 01: copertina, sommario, sei doppie pagine da sfogliare, cinque articoli di fila |
+| `feed.xml` | Il feed RSS del Diario |
+
+## Come si aggiorna
+
+```bash
+python3 tools/build.py          # genera gli articoli da content/diario, l'indice, il feed; allinea nav e footer ovunque
+node tools/export.mjs settembre-2026   # og.jpg per i social e il PDF del numero (richiede playwright)
+```
+
+Un articolo nuovo è un file in `content/diario/` con un'intestazione JSON in commento (titolo, sommario, rubrica, data, minuti, immagine, video opzionale) seguita dal corpo in HTML. Nav e footer si scrivono una volta sola in `tools/build.py` e vengono inseriti fra i marcatori `<!-- @nav -->` e `<!-- @footer -->` di ogni pagina.
+
+## Si guarda qui, conta là
+
+Ogni video si riproduce nel player ufficiale di YouTube (`youtube-nocookie.com/embed`), caricato solo al click: la visualizzazione, il tempo di visione e l'iscrizione contano sul canale @FullGas403. La playlist della videoteca è quella dei caricamenti del canale (`UUH0v_efZqSS6ZmvFHaYiafg`), quindi si aggiorna da sola. I link "Iscriviti" usano `?sub_confirmation=1`.
+
+## Community
+
+- **La benzina del lunedì**: il modulo spedisce a `FG_CONFIG.newsletterEndpoint` (in `assets/js/config.js`, POST JSON); se è vuoto apre una mail alla redazione.
+- **La domanda del mese**: la risposta si copia negli appunti e si apre il video su YouTube per incollarla nel commento. Non c'è un contatore lato server: i voti sono i commenti.
+- **Manda la tua moto** e **gli appuntamenti**: mail alla redazione con oggetto e campi precompilati.
 
 ## Identità
 

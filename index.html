@@ -2,40 +2,53 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Full Gas — Motori e documentari · Canale 403</title>
-<meta name="description" content="Full Gas è il canale motori della rete Nexum: documentari, storie di macchine e di persone, curiosità e aneddoti dal mondo dei motori. Canale 403, tasto rosso, posizione 8. Storie che vanno a benzina.">
+<meta name="description" content="Full Gas è il canale motori della rete Nexum: documentari, storie di macchine e di persone, curiosità e aneddoti dal mondo dei motori. Canale 403, tasto rosso, posizione 8. Stasera alle 21:00 la premiere dello speciale dall'Eternal City Moto Show.">
 <meta name="theme-color" content="#0B0C0E">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Full Gas — Storie che vanno a benzina.">
-<meta property="og:description" content="Il canale motori della rete Nexum. Canale 403, tasto rosso, posizione 8.">
-<meta property="og:image" content="assets/img/gazometro-rust.jpg">
+<meta property="og:description" content="Il canale motori della rete Nexum. Canale 403, tasto rosso, posizione 8. Stasera alle 21:00 la premiere dello speciale.">
+<meta property="og:image" content="assets/img/yt/premiere.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="brand/fg_mark_arancio.png" type="image/png">
 <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fullgas.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<noscript><style>.fade-up,.reveal{opacity:1!important;transform:none!important}.ignition,.cursor,.gauge{display:none!important}</style></noscript>
 </head>
-<body>
+<body data-state="before">
 <a class="skip" href="#main">Vai al contenuto</a>
+
+<!-- accensione -->
+<div class="ignition" id="ignition" aria-hidden="true">
+  <div class="ignition__in">
+    <img class="ignition__mark" src="brand/fg_mark_arancio.png" alt="">
+    <div class="ignition__line"></div>
+    <div class="ignition__rpm"><span>Accensione</span><b data-rpm>0</b><span>giri</span></div>
+  </div>
+  <button class="ignition__skip" type="button">Salta</button>
+</div>
+
+<div class="cursor is-hidden" aria-hidden="true"><i class="cursor__dot"></i><i class="cursor__ring"></i></div>
+<div class="progress" aria-hidden="true"><i></i></div>
 <div class="page-grain" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Full Gas, home">
-      <img class="brand__mark" src="brand/fg_mark_arancio.png" alt="">
-      <span class="brand__name">Full Gas</span>
-    </a>
+    <a class="brand" href="index.html" aria-label="Full Gas, home"><img class="brand__mark" src="brand/fg_mark_arancio.png" alt=""><span class="brand__name">Full Gas</span></a>
     <nav class="nav__links" aria-label="Principale">
+      <a href="#canale">Il canale</a>
       <a href="#programmi">Programmi</a>
+      <a href="#stasera">Stasera</a>
       <a href="#palinsesto">Palinsesto</a>
-      <a href="speciale-gazometro.html">Speciale Gazometro</a>
-      <a href="magazine.html">Magazine</a>
+      <a href="#magazine">Magazine</a>
       <a href="#hbbtv">Come vederci</a>
     </nav>
     <div class="nav__cta">
-      <span class="pill pill--soon"><i class="dot dot--pulse"></i>403 · In arrivo</span>
-      <a class="btn btn--ghost btn--sm" href="https://nexumchannel.com" target="_blank" rel="noopener">Nexum ↗</a>
+      <a class="nav__live" href="#stasera" data-state="before"><i class="dot dot--pulse"></i><span data-live-label>Premiere 21:00</span><b data-cd-mini>--:--:--</b></a>
       <button class="nav__burger" aria-label="Apri il menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -43,8 +56,8 @@
 
 <main id="main">
 
-<!-- ============ HERO ============ -->
-<section class="hero" aria-label="Full Gas">
+<!-- ============ HERO · IL CANALE ============ -->
+<section class="hero hero--canale" id="top" aria-label="Full Gas">
   <div class="hero__media">
     <video autoplay muted loop playsinline preload="metadata" poster="assets/video/sigla-poster.jpg" aria-hidden="true">
       <source src="assets/video/sigla.webm" type="video/webm">
@@ -54,272 +67,284 @@
   <div class="hero__scrim"></div>
   <div class="hero__glow"></div>
   <div class="safe" aria-hidden="true"></div>
-  <div class="hero__timecode" aria-hidden="true">
-    <span class="rec">● Rec</span>
-    <b data-timecode>00:00:00:00</b>
-    <span>Canale 403 · Full HD</span>
-  </div>
   <div class="hero__content">
-    <div class="wrap">
-      <p class="eyebrow reveal"><b>Full Gas</b> · Motori e documentari · una rete Nexum</p>
-      <h1 class="reveal" data-delay="1"><span class="riga">Storie che</span><span class="riga">vanno a</span><span class="riga"><em>benzina.</em></span></h1>
-      <p class="lead reveal" data-delay="2">Il canale dedicato alle automobili: documentari, storie di macchine e di persone, curiosità e aneddoti dal mondo dei motori. <b>Ritmo alto, montaggio nervoso, zero filler.</b></p>
-      <div class="hero__actions reveal" data-delay="3">
-        <a class="btn btn--primary" href="speciale-gazometro.html">Lo speciale al Gazometro
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost" href="magazine.html">Sfoglia il Magazine</a>
-        <a class="btn btn--ghost" href="#hbbtv">Come vederci</a>
+    <div class="wrap hero__grid">
+      <div>
+        <p class="hero__kicker fade-up"><b>Full Gas</b> · Motori e documentari · Canale 403 · una rete Nexum</p>
+        <h1 data-split>Storie che<br>vanno a<br><em>benzina.</em></h1>
+        <p class="lead fade-up" data-delay="2">Il canale dedicato alle automobili: documentari, storie di macchine e di persone, curiosità e aneddoti dal mondo dei motori. <b>Ritmo alto, montaggio nervoso, zero filler.</b></p>
+        <div class="hero__actions fade-up" data-delay="3">
+          <a class="btn btn--primary" href="#programmi">I programmi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="#canale">Chi siamo</a>
+          <a class="btn btn--ghost" href="#hbbtv">Come vederci</a>
+        </div>
+        <div class="hero__stats hero__stats--tight fade-up" data-delay="4">
+          <div class="stat"><b>4<i>0</i>3</b><span>LCN nazionale</span></div>
+          <div class="stat"><b>08</b><span>posizione · tasto rosso</span></div>
+          <div class="stat"><b>24<i>/</i>7</b><span>in onda, nessuna app</span></div>
+          <div class="stat"><b>57</b><span>paesi via streaming</span></div>
+        </div>
       </div>
-      <div class="hero__stats reveal" data-delay="4">
-        <div class="stat"><b>4<i>0</i>3</b><span>LCN nazionale</span></div>
-        <div class="stat"><b>08</b><span>posizione · tasto rosso</span></div>
-        <div class="stat"><b>24<i>/</i>7</b><span>in onda, nessuna app</span></div>
-        <div class="stat"><b>57</b><span>paesi via streaming</span></div>
-      </div>
+      <a class="tonight fade-up" data-delay="2" href="#stasera" aria-label="Stasera alle 21:00: la premiere dello speciale">
+        <div class="tonight__img">
+          <img src="assets/img/yt/premiere.jpg" alt="" width="1280" height="720">
+          <span class="tonight__chip"><i class="dot dot--pulse"></i><span data-live-label>Premiere 21:00</span></span>
+          <span class="tonight__play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3l16 9-16 9z"/></svg></span>
+        </div>
+        <div class="tonight__body">
+          <span class="tonight__k">Stasera · il primo speciale · YouTube @FullGas403</span>
+          <span class="tonight__t">Harley da corsa svelate sotto il telo</span>
+          <span class="tonight__cd"><span>Fra</span><b data-cd-mini>--:--:--</b><span>ore · min · sec</span></span>
+          <span class="tonight__actions"><span class="btn btn--primary btn--sm">Il programma della serata →</span></span>
+        </div>
+      </a>
     </div>
   </div>
+  <a class="scroll-cue" href="#canale"><span>Scorri</span><i></i></a>
 </section>
 
-<!-- ============ TICKER ============ -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker__track">
     <span class="ticker__item"><b>Officina Centrale</b> prima serata</span>
+    <span class="ticker__item"><b>Stasera 21:00</b> la premiere dello speciale</span>
     <span class="ticker__item"><b>Lungo Raggio</b> ore 12</span>
-    <span class="ticker__item"><b>Speciale</b> il Gazometro accende i motori</span>
-    <span class="ticker__item"><b>Magazine</b> numero 01 · ottobre 2026</span>
     <span class="ticker__item"><b>Canale 403</b> tasto rosso · posizione 8</span>
-    <span class="ticker__item"><b>Full HD</b> HbbTV · DVB-T2</span>
     <span class="ticker__item"><b>L'Auto Storica</b> pomeriggio</span>
-    <span class="ticker__item"><b>Confronto e Verdetto</b> sette minuti, una risposta</span>
+    <span class="ticker__item"><b>Il Dettaglio</b> Bugatti Tourbillon, il paradosso dell'elettrico</span>
+    <span class="ticker__item"><b>Magazine</b> numero 01 · ottobre 2026</span>
+    <span class="ticker__item"><b>Full HD</b> HbbTV · DVB-T2</span>
   </div>
 </div>
 
-<!-- ============ LINEA EDITORIALE ============ -->
-<section class="sez" id="linea">
-  <div class="wrap">
-    <div class="sez-head sez-head--split">
-      <div>
-        <p class="eyebrow reveal">Linea editoriale</p>
-        <h2 class="reveal" data-delay="1">Da vicino.<br>Con le mani sporche.</h2>
-      </div>
-      <p class="lead reveal" data-delay="2">Si sta vicini alle cose. Lamiera, pelle, gomma, olio, il freddo del mattino in officina. <b>Documentario, non pubblicità</b>: la macchina è in una strada vera, in un capannone vero, con la polvere che ha addosso.</p>
-    </div>
-    <div class="grid grid--3">
-      <article class="card card--pad reveal">
-        <p class="eyebrow eyebrow--no am">01 · Luce</p>
-        <h3 style="margin:14px 0 10px">Luce disponibile, per prima</h3>
-        <p class="corpo small" style="margin:0">Il sole basso del mattino e del tardo pomeriggio è la luce di casa: taglia, fa brillare il metallo e lascia neri veri sotto la macchina. In officina, le plafoniere che ci sono, con le loro dominanti.</p>
-      </article>
-      <article class="card card--pad reveal" data-delay="1">
-        <p class="eyebrow eyebrow--no am">02 · Archivio</p>
-        <h3 style="margin:14px 0 10px">Il repertorio si mostra per quello che è</h3>
-        <p class="corpo small" style="margin:0">Non si ripulisce, non si stabilizza, non si colora per farlo somigliare al girato nuovo. La grana e il formato sbagliato sono l'informazione: dicono che quella cosa è successa davvero, e tanto tempo fa.</p>
-      </article>
-      <article class="card card--pad reveal" data-delay="2">
-        <p class="eyebrow eyebrow--no am">03 · Testo</p>
-        <h3 style="margin:14px 0 10px">Il testo entra quando porta un dato</h3>
-        <p class="corpo small" style="margin:0">Una cifra, una data, un nome, un'unità di misura. Grande, poco, fermo. Mai come decorazione, mai per ripetere quello che la voce sta già dicendo.</p>
-      </article>
-    </div>
-    <p class="aparte reveal" style="margin-top:clamp(36px,5vw,64px)">«Il metro è uno solo: sembra girato da qualcuno che era lì.»<small>Dalla bibbia visiva del canale</small></p>
+<!-- ============ IL CANALE ============ -->
+<section class="kin" id="canale" aria-label="Chi è Full Gas">
+  <div class="kin__lines" aria-hidden="true">
+    <div class="kin__line kin__line--stroke">Da vicino. Da vicino. Da vicino.</div>
+    <div class="kin__line kin__line--ar kin__line--r">Con le mani sporche.</div>
+    <div class="kin__line">Ritmo alto. Zero filler.</div>
   </div>
-</section>
-
-<div class="wrap"><div class="scanline" aria-hidden="true"></div></div>
-
-<!-- ============ PROGRAMMI ============ -->
-<section class="sez" id="programmi">
   <div class="wrap">
-    <div class="sez-head sez-head--split">
+    <div class="canale-grid">
       <div>
-        <p class="eyebrow reveal">Programmi</p>
-        <h2 class="reveal" data-delay="1">Sei ossature.<br>Un solo canale.</h2>
+        <p class="eyebrow fade-up">Chi è Full Gas</p>
+        <h2 class="h-big" data-split>L'ottavo canale<br>della rete Nexum.</h2>
+        <p class="lead fade-up" data-delay="2" style="margin-top:18px">Nexum è la piattaforma editoriale multicanale sul digitale terrestre italiano: otto redazioni verticali dietro un solo numero, il 403. Full Gas è quella dei motori. Si sta vicini alle cose: lamiera, pelle, gomma, olio, il freddo del mattino in officina. <b>Documentario, non pubblicità.</b> La macchina è in una strada vera, in un capannone vero, con la polvere che ha addosso.</p>
+        <p class="aparte fade-up" data-delay="3" style="margin-top:26px">«Il metro è uno solo: sembra girato da qualcuno che era lì.»<small>Dalla bibbia visiva del canale</small></p>
       </div>
-      <p class="lead reveal" data-delay="2">Ogni programma è una sequenza di pezzi con un nome sopra, non un file. Il documentario è il pezzo forte; la pillola riempie la giornata; lo speciale esce e va sul posto.</p>
+      <div class="scheda-canale fade-up" data-delay="2">
+        <div><span>Rete</span><span>Nexum · otto canali tematici</span></div>
+        <div><span>Canale</span><span>LCN <i>403</i> · digitale terrestre DVB-T2</span></div>
+        <div><span>Tasto rosso</span><span>HbbTV · posizione <i>8</i></span></div>
+        <div><span>Genere</span><span>Motori e documentari</span></div>
+        <div><span>Linea</span><span>Storie che vanno a benzina.</span></div>
+        <div><span>Stato</span><span>In arrivo sul 403 · <i>in premiere su YouTube</i></span></div>
+        <div><span>Online</span><span><a href="https://www.youtube.com/@FullGas403" target="_blank" rel="noopener">youtube.com/@FullGas403 ↗</a></span></div>
+        <div><span>Editore</span><span>Blue Vinyl Events S.r.l.s. · Formello (RM)</span></div>
+      </div>
     </div>
-    <div class="grid grid--3">
-      <article class="card prog prog--big reveal">
-        <div class="prog__media"><img src="assets/img/kv-alfa.webp" alt="" loading="lazy"></div>
-        <div class="prog__scrim"></div>
-        <div class="prog__top"><span class="pill pill--ar">Prima serata</span><span class="prog__num">01</span></div>
-        <div><h3>Officina Centrale</h3><p>Meccanica spiegata con le mani: modifiche, restauri, prove su strada. Il programma di punta, un pezzo dietro l'altro, dalle otto alle undici di sera.</p></div>
-        <div class="prog__foot"><span>Documentario <b>8–15′</b></span><span>Analisi <b>5–8′</b></span><span>Fascia <b>20:00–23:00</b></span></div>
-      </article>
-      <article class="card prog reveal" data-delay="1">
-        <div class="prog__top"><span class="pill">Pranzo</span><span class="prog__num">02</span></div>
-        <div><h3>Lungo Raggio</h3><p>Strade, viaggi, soggettive di guida che durano quanto serve. Un'inquadratura lunga con dentro del movimento tiene più di quattro corte.</p></div>
-        <div class="prog__foot"><span>Documentario <b>8–15′</b></span><span>Fascia <b>12:00</b></span></div>
-      </article>
-      <article class="card prog card--archivio reveal">
-        <div class="prog__top"><span class="pill pill--oro">Archivio</span><span class="prog__num">03</span></div>
-        <div><h3>L'Auto Storica</h3><p>Un'auto, dieci minuti, l'archivio così com'è: grana compresa. Le date e le citazioni d'epoca in corsivo e oro, come su una targa.</p></div>
-        <div class="prog__foot"><span>Formato <b>10′</b></span><span>Fascia <b>pomeriggio</b></span></div>
-      </article>
-      <article class="card prog reveal" data-delay="1">
-        <div class="prog__top"><span class="pill">Pomeriggio</span><span class="prog__num">04</span></div>
-        <div><h3>Confronto e Verdetto</h3><p>Sette minuti, due macchine, una risposta. I dati a schermo sono grandi, pochi e fermi: si leggono a tre metri dal televisore.</p></div>
-        <div class="prog__foot"><span>Formato <b>7′</b></span><span>Fascia <b>15:00–19:00</b></span></div>
-      </article>
-      <article class="card prog reveal" data-delay="2">
-        <div class="prog__top"><span class="pill">Mattina</span><span class="prog__num">05</span></div>
-        <div><h3>Il Dettaglio</h3><p>Una curiosità, una risposta secca. Pillole da due minuti e mezzo: il formato che riempie il palinsesto senza mai sembrare un riempitivo.</p></div>
-        <div class="prog__foot"><span>Pillola <b>2′30″</b></span><span>Fascia <b>06:00–12:00</b></span></div>
-      </article>
-      <article class="card prog prog--big card--ar reveal" data-delay="3">
-        <div class="prog__media"><img src="assets/img/gazometro-rust.jpg" alt="" loading="lazy" style="object-position:50% 35%"></div>
-        <div class="prog__scrim"></div>
-        <div class="prog__top"><span class="pill pill--ar"><i class="dot dot--pulse"></i>Speciale</span><span class="prog__num">06</span></div>
-        <div><h3>Speciale</h3><p>Eventi, raduni, saloni: il canale esce dalla redazione e va sul posto. Il primo è al Gazometro di Roma, con mille moto e una notte di parata.</p></div>
-        <div class="prog__foot"><span>Formato <b>20–75′</b></span><span>Fascia <b>prima serata</b></span><span><a href="speciale-gazometro.html" style="color:var(--ignition)">Vai allo speciale →</a></span></div>
-      </article>
-      <article class="card prog reveal" data-delay="4">
-        <div class="prog__top"><span class="pill pill--oro">Carta</span><span class="prog__num">07</span></div>
-        <div><h3>Il Magazine</h3><p>Le stesse storie, impaginate: una copertina, sei doppie pagine, cinque articoli di fila. Un numero al mese, con i caratteri del canale.</p></div>
-        <div class="prog__foot"><span>Numero <b>01</b></span><span><a href="magazine.html" style="color:var(--amber)">Sfoglia →</a></span></div>
-      </article>
+    <div class="principi" style="margin-top:clamp(40px,6vw,72px)">
+      <div class="principio fade-up"><b>01 · Luce</b><h3>Luce disponibile, per prima</h3><p>Il sole basso del mattino e del tardo pomeriggio è la luce di casa: taglia, fa brillare il metallo e lascia neri veri sotto la macchina. In officina, le plafoniere che ci sono.</p></div>
+      <div class="principio fade-up" data-delay="1"><b>02 · Archivio</b><h3>Il repertorio si mostra per quello che è</h3><p>Non si ripulisce, non si stabilizza, non si colora. La grana e il formato sbagliato sono l'informazione: dicono che quella cosa è successa davvero.</p></div>
+      <div class="principio fade-up" data-delay="2"><b>03 · Testo</b><h3>Il testo entra quando porta un dato</h3><p>Una cifra, una data, un nome, un'unità di misura. Grande, poco, fermo. Mai per ripetere quello che la voce sta già dicendo.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ PALINSESTO ============ -->
-<section class="sez" id="palinsesto" style="background:var(--asfalto-2);border-block:1px solid var(--line)">
-  <div class="wrap">
+<!-- ============ PROGRAMMI · IN ORIZZONTALE ============ -->
+<section class="hs" id="programmi">
+  <div class="wrap hs__head">
     <div class="sez-head sez-head--split">
-      <div>
-        <p class="eyebrow reveal">Palinsesto</p>
-        <h2 class="reveal" data-delay="1">La giornata<br>di Full Gas.</h2>
-      </div>
-      <p class="lead reveal" data-delay="2">Il canale mantiene il suo genere per l'intera giornata: cambia il formato, non l'argomento. Cinque fasce, due picchi, e la seconda serata trattata come una fascia, non come un avanzo.</p>
+      <div><p class="eyebrow fade-up">Programmi</p><h2 class="h-big" data-split>Sette ossature.<br>Un solo canale.</h2></div>
+      <p class="lead fade-up" data-delay="2">Ogni programma è una sequenza di pezzi con un nome sopra, non un file. Scorri: la pista si muove con te.</p>
     </div>
-    <div class="fasce reveal">
-      <div class="fascia" data-da="6" data-a="12">
-        <div class="fascia__ore"><b>06</b>–<b>12</b></div>
-        <h3>Mattina</h3>
-        <p>Rassegne, magazine e repliche dei programmi di punta.</p>
-        <div class="fascia__prog">Il Dettaglio · Magazine</div>
-      </div>
-      <div class="fascia fascia--picco" data-da="12" data-a="15">
-        <div class="fascia__ore"><b>12</b>–<b>15</b></div>
-        <h3>Pranzo</h3>
-        <p>Fascia di picco: approfondimenti e rubriche quotidiane.</p>
-        <div class="fascia__prog">Lungo Raggio</div>
-      </div>
-      <div class="fascia" data-da="15" data-a="19">
-        <div class="fascia__ore"><b>15</b>–<b>19</b></div>
-        <h3>Pomeriggio</h3>
-        <p>Documentari, reportage e contenuti di catalogo.</p>
-        <div class="fascia__prog">L'Auto Storica · Confronto e Verdetto</div>
-      </div>
-      <div class="fascia fascia--picco" data-da="19" data-a="23">
-        <div class="fascia__ore"><b>19</b>–<b>23</b></div>
-        <h3>Prima serata</h3>
-        <p>Fascia di picco: prime visioni, dirette ed eventi.</p>
-        <div class="fascia__prog">Officina Centrale · Speciale</div>
-      </div>
-      <div class="fascia" data-da="23" data-a="6">
-        <div class="fascia__ore"><b>23</b>–<b>06</b></div>
-        <h3>Notte</h3>
-        <p>Programmazione continua e repliche della giornata.</p>
-        <div class="fascia__prog">Seconda serata · Repliche</div>
-      </div>
+  </div>
+  <div class="hs__viewport">
+    <div class="hs__track">
+      <a class="hs__panel hs__panel--media" href="#palinsesto"><img src="assets/img/kv-alfa.webp" alt="" loading="lazy"><div class="hs__top"><span class="pill pill--ar">Prima serata</span><span class="hs__num">01</span></div><div class="hs__body"><h3>Officina Centrale</h3><p>Meccanica spiegata con le mani: modifiche, restauri, prove su strada. Il programma di punta, un pezzo dietro l'altro, dalle otto alle undici di sera.</p><div class="hs__foot"><span>Documentario <b>8–15′</b></span><span>Analisi <b>5–8′</b></span><span>Fascia <b>20:00–23:00</b></span></div></div></a>
+      <a class="hs__panel" href="#palinsesto"><div class="hs__top"><span class="pill">Pranzo</span><span class="hs__num">02</span></div><div class="hs__body"><h3>Lungo Raggio</h3><p>Strade, viaggi, soggettive di guida che durano quanto serve. Un'inquadratura lunga con dentro del movimento tiene più di quattro corte.</p><div class="hs__foot"><span>Documentario <b>8–15′</b></span><span>Fascia <b>12:00</b></span></div></div></a>
+      <a class="hs__panel hs__panel--archivio" href="#palinsesto"><div class="hs__top"><span class="pill pill--oro">Archivio</span><span class="hs__num">03</span></div><div class="hs__body"><h3>L'Auto Storica</h3><p>Un'auto, dieci minuti, l'archivio così com'è: grana compresa. Le date e le citazioni d'epoca in corsivo e oro, come su una targa.</p><div class="hs__foot"><span>Formato <b>10′</b></span><span>Fascia <b>pomeriggio</b></span></div></div></a>
+      <a class="hs__panel" href="#palinsesto"><div class="hs__top"><span class="pill">Pomeriggio</span><span class="hs__num">04</span></div><div class="hs__body"><h3>Confronto e Verdetto</h3><p>Sette minuti, due macchine, una risposta. I dati a schermo sono grandi, pochi e fermi: si leggono a tre metri dal televisore.</p><div class="hs__foot"><span>Formato <b>7′</b></span><span>Fascia <b>15:00–19:00</b></span></div></div></a>
+      <a class="hs__panel hs__panel--media" href="https://www.youtube.com/watch?v=TLMueRQ6Qg8" target="_blank" rel="noopener"><img src="assets/img/yt/bugatti.jpg" alt="" loading="lazy"><div class="hs__top"><span class="pill">Mattina</span><span class="hs__num">05</span></div><div class="hs__body"><h3>Il Dettaglio</h3><p>Una curiosità, una risposta secca. Pillole da due minuti e mezzo: l'ultima è sulla Bugatti Tourbillon e il paradosso dell'elettrico.</p><div class="hs__foot"><span>Pillola <b>2′30″</b></span><span>Fascia <b>06:00–12:00</b></span><span><b>Guarda ↗</b></span></div></div></a>
+      <a class="hs__panel hs__panel--media hs__panel--ar" href="#stasera"><img src="assets/img/yt/premiere.jpg" alt="" loading="lazy"><div class="hs__top"><span class="pill pill--ar"><i class="dot dot--pulse"></i>Stasera</span><span class="hs__num">06</span></div><div class="hs__body"><h3>Speciale</h3><p>Eventi, raduni, saloni: il canale esce dalla redazione e va sul posto. Il primo è l'Eternal City Moto Show al Gazometro di Roma, in premiere stasera alle 21:00.</p><div class="hs__foot"><span>Formato <b>34′</b></span><span>Fascia <b>prima serata</b></span><span><b>Vai alla premiere →</b></span></div></div></a>
+      <a class="hs__panel hs__panel--media" href="#magazine"><img src="assets/img/gazometro-rust.jpg" alt="" loading="lazy" style="object-position:50% 30%"><div class="hs__top"><span class="pill pill--oro">Carta</span><span class="hs__num">07</span></div><div class="hs__body"><h3>Il Magazine</h3><p>Le stesse storie, impaginate: una copertina, sei doppie pagine, cinque articoli di fila. Un numero al mese, con i caratteri del canale.</p><div class="hs__foot"><span>Numero <b>01</b></span><span><b>Sfoglia →</b></span></div></div></a>
     </div>
-    <div class="giornata reveal" aria-hidden="true">
-      <span>00:00</span>
-      <div class="giornata__bar"><i data-ora="--:--"></i></div>
-      <span>24:00</span>
-    </div>
-    <p class="small muted reveal" style="margin-top:26px;max-width:70ch">Il canale è in arrivo sul 403: questa è la giornata tipo, costruita con la stessa struttura delle altre redazioni Nexum. Il tasto rosso mostra sempre cosa sta andando in onda su ciascun canale della rete.</p>
+    <div class="hs__hint" aria-hidden="true"><i></i>Scorri</div>
+    <div class="hs__count" aria-hidden="true"><b data-hs-cur>01</b> / 07</div>
   </div>
 </section>
 
-<!-- ============ SPECIALE ============ -->
-<section class="sez" id="speciale">
+<!-- ============ STASERA · LA PREMIERE ============ -->
+<section class="sez stasera" id="stasera">
+  <canvas class="gazo" id="gazo" aria-hidden="true"></canvas>
+  <div class="stasera__scrim"></div>
   <div class="wrap">
-    <a class="feature reveal" href="speciale-gazometro.html">
-      <div class="feature__media ken"><img src="assets/img/gazometro-rust.jpg" alt="Il Gazometro di Roma Ostiense: la struttura in ferro a luce radente" loading="lazy"></div>
-      <div class="feature__body">
-        <p class="eyebrow"><b>Speciale</b> · Roma Ostiense · 25–27 settembre 2026</p>
-        <h2>Il Gazometro accende i motori</h2>
-        <p class="lead" style="font-size:17px">Tre giorni sotto il gasometro più alto d'Italia: oltre trenta case, prove su strada e una parata notturna di mille moto fino al centro di Roma. <b>Il primo speciale di Full Gas va sul posto.</b></p>
-        <div class="feature__meta">
-          <span class="pill pill--ar">10ª edizione</span><span class="pill">Rome Night Run</span><span class="pill">Prima serata</span>
+    <div class="sez-head sez-head--split">
+      <div>
+        <p class="eyebrow fade-up"><b>Stasera</b> · il primo speciale · Roma Ostiense, 25–27 settembre</p>
+        <h2 class="h-big" data-split>Il Gazometro<br>accende i motori.</h2>
+      </div>
+      <p class="lead fade-up" data-delay="2">Il primo evento seguito da Full Gas: l'Eternal City Moto Show 2026, decima edizione, per la prima volta al Gazometro di Roma. Harley da corsa svelate sotto il telo, una moto samurai, una Royal Enfield trasformata in un mazzo di fiori, i chopper arrivati dagli Stati Uniti. <b>Con Mauro Caputi e Claudia Cucchiarelli.</b></p>
+    </div>
+
+    <div class="cd-state cd-state--before fade-up">
+      <div class="cd" data-cd data-hide-days="1" role="timer" aria-label="Tempo alla premiere">
+        <div class="cd__cell cd__cell--d"><b data-cd-d>0</b><span>giorni</span></div><div class="cd__sep cd__sep--d">:</div>
+        <div class="cd__cell"><b data-cd-h>--</b><span>ore</span></div><div class="cd__sep">:</div>
+        <div class="cd__cell"><b data-cd-m>--</b><span>min</span></div><div class="cd__sep">:</div>
+        <div class="cd__cell"><b data-cd-s>--</b><span>sec</span></div>
+        <p class="cd__note">Martedì 29 settembre · <b>ore 21:00</b> · 34 minuti · in premiere su YouTube · premi play per entrare nella sala d'attesa</p>
+      </div>
+    </div>
+    <div class="cd-state cd-state--live"><div class="live-badge"><i class="dot dot--pulse"></i>In onda ora</div><p class="cd__note">La premiere è iniziata · <b>guardala qui sotto</b></p></div>
+    <div class="cd-state cd-state--after"><div class="live-badge" style="color:var(--amber)">Disponibile ora</div><p class="cd__note">Lo speciale completo · <b>34 minuti</b> · sul canale YouTube</p></div>
+
+    <div class="prem" style="margin-top:clamp(28px,4vw,48px)">
+      <div class="player fade-up" data-state="before">
+        <img src="assets/img/yt/premiere.jpg" alt="Mauro Caputi e Claudia Cucchiarelli con le moto dell'Eternal City Moto Show 2026" width="1280" height="720">
+        <span class="player__chip"><i class="dot dot--pulse"></i>Premiere fra <b data-player-cd>--:--:--</b></span>
+        <button class="player__btn" type="button" aria-label="Riproduci lo speciale">
+          <span class="player__play"><svg viewBox="0 0 24 24" fill="#0B0C0E"><path d="M5 3l16 9-16 9z"/></svg></span>
+        </button>
+        <div class="player__meta"><span class="player__title">Eternal City Moto Show 2026 · lo speciale</span><span class="player__yt">YouTube · 34′</span></div>
+      </div>
+      <div class="prem__side">
+        <div class="fade-up" data-delay="1">
+          <p class="eyebrow eyebrow--no" style="margin-bottom:12px">I capitoli · clicca e vai al minuto</p>
+          <nav class="cap-list" aria-label="Capitoli dello speciale">
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=93s" data-play="93"><span class="tc">01:33</span><span class="t">Killer Bagger Contest<small>Le Harley da corsa: 4Touring, Ironborne, Breska Inc. Kustom</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=500s" data-play="500"><span class="tc">08:20</span><span class="t">Workshop Legends<small>Quattro special svelate: «Massimo», «Elemento», «Royal Flowers», «Murasaki»</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1107s" data-play="1107"><span class="tc">18:27</span><span class="t">Ars Mechanica<small>Dallo sketch alla moto, con Alessio «Tex» Tommasetti</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1273s" data-play="1273"><span class="tc">21:13</span><span class="t">La storia di Vincent<small>Un capitolo che parla anche di odio online</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1583s" data-play="1583"><span class="tc">26:23</span><span class="t">La gente del Gazometro<small>Il gioco di Claudia: qual è la tua moto preferita?</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1823s" data-play="1823"><span class="tc">30:23</span><span class="t">Colosseum Chopper Show<small>Brobeck, Vazquez, Grand, Solighetto, McKeag, Seeger</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=2007s" data-play="2007"><span class="tc">33:27</span><span class="t">Daje gas! Il finale</span></a>
+          </nav>
         </div>
-        <div><span class="btn btn--primary">Guarda lo speciale
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <div class="hosts fade-up" data-delay="2"><span class="pill"><i>MC</i>Mauro Caputi</span><span class="pill"><i>CC</i>Claudia Cucchiarelli</span><span class="pill pill--ar">Speciale · 34′</span></div>
+        <div class="hero__actions fade-up" data-delay="3" style="margin-top:0">
+          <a class="btn btn--primary" href="https://www.youtube.com/watch?v=LesX001M5Co" target="_blank" rel="noopener" data-live-text data-live-text-before="Imposta il promemoria ↗" data-live-text-live="Guarda su YouTube ↗" data-live-text-after="Guarda su YouTube ↗">Imposta il promemoria ↗</a>
+          <a class="btn btn--ghost" href="speciale-gazometro.html">Leggi lo speciale</a>
+        </div>
+        <p class="prem__note fade-up" data-delay="3">Killer Bagger Contest ideato da Carlo Stievano con Fabrizio Croce. Workshop Legends con Andrea «Dopz» Erba. Voce narrante e doppiaggi degli ospiti stranieri realizzati con voci sintetiche.</p>
       </div>
-    </a>
+    </div>
+
+    <div class="shorts">
+      <a class="short fade-up" href="https://www.youtube.com/shorts/coG7cFeAJWI" target="_blank" rel="noopener">
+        <img src="assets/img/yt/teaser-v.jpg" alt="Marco Matteucci presenta la «Murasaki» al Workshop Legends" loading="lazy">
+        <span class="short__play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3l16 9-16 9z"/></svg></span>
+        <span class="short__cap"><span class="short__k">Short · il teaser</span><span class="short__t">Eternal City Moto Show 2026 🔥 lo speciale</span></span>
+      </a>
+      <a class="short fade-up" data-delay="1" href="https://www.youtube.com/shorts/rS80Dlt1F_g" target="_blank" rel="noopener">
+        <img src="assets/img/yt/claudia-v.jpg" alt="Un visitatore risponde alla domanda di Claudia sulla moto preferita" loading="lazy">
+        <span class="short__play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3l16 9-16 9z"/></svg></span>
+        <span class="short__cap"><span class="short__k">Short · vox pop</span><span class="short__t">La missione di Claudia: qual è la tua moto preferita?</span></span>
+      </a>
+      <a class="short short--epi fade-up" data-delay="2" href="https://www.youtube.com/watch?v=TLMueRQ6Qg8" target="_blank" rel="noopener">
+        <img src="assets/img/yt/bugatti.jpg" alt="Bugatti Tourbillon: il paradosso dell'elettrico" loading="lazy">
+        <span class="short__play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3l16 9-16 9z"/></svg></span>
+        <span class="short__cap"><span class="short__k">Il Dettaglio · l'episodio precedente</span><span class="short__t">Bugatti Tourbillon: il paradosso dell'elettrico</span><p>L'elettrico dà la risposta immediata; il V16 conserva il carattere meccanico. Due minuti e mezzo da guardare prima di stasera.</p></span>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- ============ MAGAZINE ============ -->
-<section class="sez sez--tight" id="magazine">
+<!-- ============ PALINSESTO · L'ANELLO DELLE 24 ORE ============ -->
+<section class="sez" id="palinsesto">
   <div class="wrap">
-    <a class="feature feature--rev reveal" href="magazine.html">
-      <div class="feature__media" style="display:grid;place-items:center;padding:clamp(28px,5vw,64px);background:radial-gradient(60% 60% at 50% 45%,rgba(254,67,9,.14),transparent 70%),var(--grafite)">
-        <div class="cover" style="width:min(100%,320px)">
-          <img src="assets/img/gazometro-rust.jpg" alt="">
-          <div class="cover__t">
-            <div><div class="cover__masthead">Full<br>G<i>a</i>s</div><div class="cover__num">Magazine · N. 01 · Ottobre 2026</div></div>
-            <div></div>
-            <div><div class="cover__title">Mille moto <i>sotto</i> il Gazometro</div><div class="cover__strip"><span>Officina · Archivio</span><span>Canale 403</span></div></div>
+    <div class="sez-head sez-head--split">
+      <div><p class="eyebrow fade-up">Palinsesto</p><h2 class="h-big" data-split>Le 24 ore<br>di Full Gas.</h2></div>
+      <p class="lead fade-up" data-delay="2">Il canale mantiene il suo genere per l'intera giornata: cambia il formato, non l'argomento. La lancetta segna l'ora di adesso; le fasce arancioni sono i picchi.</p>
+    </div>
+    <div class="ring-wrap">
+      <div class="ring fade-up" aria-hidden="true">
+        <svg viewBox="0 0 200 200"></svg>
+        <div class="ring__center"><div><small>Adesso</small><b data-ring-now>--:--</b><i data-ring-nome>—</i><small data-ring-prog style="color:var(--bianco-2);letter-spacing:.12em">—</small></div></div>
+      </div>
+      <div class="fasce-list fade-up" data-delay="1">
+        <div class="fr"><span class="ore">06–12</span><span class="nome">Mattina<small>Rassegne, magazine e repliche dei programmi di punta.</small></span><span class="prog">Il Dettaglio · Magazine</span></div>
+        <div class="fr"><span class="ore"><span class="picco"></span>12–15</span><span class="nome">Pranzo<small>Fascia di picco: approfondimenti e rubriche quotidiane.</small></span><span class="prog">Lungo Raggio</span></div>
+        <div class="fr"><span class="ore">15–19</span><span class="nome">Pomeriggio<small>Documentari, reportage e contenuti di catalogo.</small></span><span class="prog">L'Auto Storica · Confronto e Verdetto</span></div>
+        <div class="fr"><span class="ore"><span class="picco"></span>19–23</span><span class="nome">Prima serata<small>Fascia di picco: prime visioni, dirette ed eventi. Stasera, la premiere.</small></span><span class="prog">Officina Centrale · Speciale</span></div>
+        <div class="fr"><span class="ore">23–06</span><span class="nome">Notte<small>Programmazione continua e repliche della giornata.</small></span><span class="prog">Seconda serata · Repliche</span></div>
+      </div>
+    </div>
+    <p class="small muted fade-up" style="margin-top:26px;max-width:70ch">Il canale è in arrivo sul 403 con la stessa struttura delle altre redazioni Nexum. Intanto gli speciali e le pillole escono su YouTube, e il tasto rosso mostra sempre cosa va in onda su ciascun canale della rete.</p>
+  </div>
+</section>
+
+<!-- ============ MAGAZINE · IL LIBRO ============ -->
+<section class="bk" id="magazine">
+  <div class="wrap bk__stage">
+    <div class="bk__scene" aria-hidden="true">
+      <div class="book">
+        <div class="book__page book__base"><div class="book__in"><div class="pg__folio"><span>Full Gas</span><span>Una rete Nexum</span></div><div class="pg__big">403<small>Canale · tasto rosso · posizione 08</small></div><div class="pg__folio"><span>nexumchannel.com</span><span>13</span></div></div></div>
+        <div class="book__page book__p2"><div class="book__in"><div class="pg__folio"><span>Speciale</span><span>N. 01</span></div><div><div class="pg__k">Roma Ostiense</div><h3 class="pg__h">Il Gazometro <i>accende</i> i motori</h3><p class="pg__body" style="margin-top:12px">Tre giorni sotto il gasometro più alto d'Italia: trenta case, prove su strada, una parata notturna fino al centro. Lo raccontiamo come si racconta un posto vero: da vicino.</p></div><div class="pg__folio"><span>Ottobre 2026</span><span>04</span></div></div></div>
+        <div class="book__page book__p1"><div class="book__in"><div class="pg__folio"><span>Full Gas Magazine</span><span>N. 01</span></div><div><div class="pg__k">Editoriale</div><h3 class="pg__h">Storie che vanno <i>a benzina.</i></h3><p class="pg__body" style="margin-top:12px">Un canale motori si può fare in due modi. Da lontano, con il configuratore acceso; o da vicino, con la polvere che ha addosso. Full Gas sceglie il secondo.</p></div><div class="pg__folio"><span>Ottobre 2026</span><span>02</span></div></div></div>
+        <div class="book__page book__cover"><img src="assets/img/gazometro-rust.jpg" alt=""><div class="cover__t"><div><div class="cover__masthead">Full<br>G<i>a</i>s</div><div class="cover__num">Magazine · N. 01 · Ottobre 2026</div></div><div></div><div><div class="cover__title">Mille moto <i>sotto</i> il Gazometro</div><div class="cover__strip"><span>Speciale · Officina · Archivio</span><span>Canale 403</span></div></div></div></div>
+      </div>
+    </div>
+    <div class="bk__text">
+      <p class="eyebrow fade-up">Full Gas Magazine · numero 01</p>
+      <h2 data-split>Il numero uno<br>si sfoglia.</h2>
+      <p class="lead fade-up" data-delay="2">Le storie del canale, impaginate: lo speciale in copertina, l'officina, l'archivio, un confronto con verdetto e la pagina che spiega il tasto rosso. Con i tre caratteri del canale, da leggere a doppia pagina o di fila.</p>
+      <div class="hero__actions fade-up" data-delay="3" style="margin-top:8px"><a class="btn btn--primary" href="magazine.html">Sfoglia il Magazine</a><a class="btn btn--ghost" href="magazine.html#leggi">Leggi di fila</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COME VEDERCI · IL TELEVISORE ============ -->
+<section class="sez" id="hbbtv">
+  <div class="wrap">
+    <div class="sez-head sez-head--split">
+      <div><p class="eyebrow fade-up">HbbTV · Hybrid Broadcast Broadband</p><h2 class="h-big" data-split>Tasto rosso,<br>posizione otto.</h2></div>
+      <p class="lead fade-up" data-delay="2">Niente da installare, niente da sottoscrivere. Premi il rosso sul telecomando qui sotto: il televisore fa vedere cosa succede.</p>
+    </div>
+    <div class="tv-wrap">
+      <div class="fade-up">
+        <div class="tvmock">
+          <img src="assets/img/kv-alfa.webp" alt="" loading="lazy">
+          <div class="tvmock__osd"><span><b>403</b> · Nexum</span><span>Full HD</span></div>
+          <div class="tvmock__menu" aria-hidden="true">
+            <h4>Nexum · la rete</h4>
+            <div class="tvmock__item"><span>01 Nexum TV</span><i>Live</i></div>
+            <div class="tvmock__item"><span>02 Italian Horse</span><i>Live</i></div>
+            <div class="tvmock__item"><span>03 Salute24</span><i>Live</i></div>
+            <div class="tvmock__item"><span>04 XCapital</span><i>Live</i></div>
+            <div class="tvmock__item"><span>05 Controradio</span><i>Live</i></div>
+            <div class="tvmock__item"><span>06 Prime Event</span><i>Live</i></div>
+            <div class="tvmock__item"><span>07 Napoletano</span><i>Presto</i></div>
+            <div class="tvmock__item"><span>08 Full Gas</span><i>Motori</i></div>
           </div>
+          <button class="tvmock__hint" type="button" data-tv-demo>▶ Rivedi</button>
+        </div>
+        <div class="tv-steps">
+          <div><b>01</b><span><strong>Sintonizza il 403.</strong> Qualsiasi televisore DVB-T2 riceve Nexum senza configurazioni.</span></div>
+          <div><b>02</b><span><strong>Connetti la TV a internet.</strong> Il segnale passa in Full HD da solo.</span></div>
+          <div><b>03</b><span><strong>Premi il tasto rosso.</strong> Il menu della rete scorre sopra la diretta, senza interromperla.</span></div>
+          <div><b>04</b><span><strong>Scendi all'otto.</strong> Full Gas è l'ultima voce della rete.</span></div>
         </div>
       </div>
-      <div class="feature__body">
-        <p class="eyebrow"><b>Magazine</b> · Numero 01 · Ottobre 2026</p>
-        <h2>Il numero uno si sfoglia.</h2>
-        <p class="lead" style="font-size:17px">Lo speciale in copertina, l'officina, l'archivio, un confronto con verdetto e la pagina che spiega il tasto rosso. <b>Impaginato con i caratteri del canale</b>, da leggere a doppia pagina o di fila.</p>
-        <div class="feature__meta"><span class="pill">6 rubriche</span><span class="pill">Doppie pagine</span><span class="pill pill--oro">Voce d'archivio</span></div>
-        <div><span class="btn btn--ghost">Sfoglia il Magazine</span></div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- ============ HBBTV ============ -->
-<section class="sez" id="hbbtv" style="background:var(--asfalto-2);border-block:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sez-head sez-head--split">
-      <div>
-        <p class="eyebrow reveal">HbbTV · Hybrid Broadcast Broadband</p>
-        <h2 class="reveal" data-delay="1">Tasto rosso,<br>posizione otto.</h2>
-      </div>
-      <p class="lead reveal" data-delay="2">Niente da installare, niente da sottoscrivere. Nexum trasmette già sulla tua antenna: il tasto rosso apre il menu della rete sopra la diretta, senza interromperla, e Full Gas è l'ottava voce.</p>
-    </div>
-    <div class="grid" style="grid-template-columns:1.5fr 1fr;align-items:center;gap:clamp(24px,4vw,56px)">
-      <div class="steps reveal">
-        <div class="step"><span class="step__n">01</span><h3>Sintonizza il 403</h3><p>Qualsiasi televisore DVB-T2 riceve il segnale Nexum senza configurazioni aggiuntive.</p></div>
-        <div class="step"><span class="step__n">02</span><h3>Connetti la TV</h3><p>Il sistema rileva la connessione e commuta in Full HD con i contenuti arricchiti.</p></div>
-        <div class="step"><span class="step__n">03</span><h3>Premi il rosso</h3><p>Si apre l'interfaccia Nexum: un menu che scorre sopra la diretta, senza interromperla.</p></div>
-        <div class="step"><span class="step__n">04</span><h3>Scendi all'otto</h3><p>Con le frecce del telecomando raggiungi Full Gas, ultima voce della rete, in pochi secondi.</p></div>
-      </div>
-      <div class="remote reveal" data-delay="2" aria-hidden="true">
+      <div class="remote remote--live fade-up" data-delay="2">
         <div class="remote__lcn">403<small>LCN · digitale terrestre</small></div>
         <div class="remote__colors"><i style="background:#ff3b30"></i><i style="background:#2ecc71"></i><i style="background:#ffd400"></i><i style="background:#0a84ff"></i></div>
-        <div class="remote__red">Premi il rosso</div>
-        <div class="remote__pad"><i></i><i>▲</i><i></i><i>◀</i><i class="ok">OK</i><i>▶</i><i></i><i>▼</i><i></i></div>
-        <div class="remote__menu">
-          <span><span>01 Nexum TV</span><b>Live</b></span>
-          <span><span>07 Napoletano</span><b>Presto</b></span>
-          <span class="is-sel"><span>08 Full Gas</span><b>● Motori</b></span>
-        </div>
+        <button class="remote__red" type="button" aria-label="Premi il tasto rosso">Premi il rosso</button>
+        <div class="remote__pad" aria-hidden="true"><i></i><i>▲</i><i></i><i>◀</i><i class="ok">OK</i><i>▶</i><i></i><i>▼</i><i></i></div>
+        <div class="remote__menu" aria-hidden="true"><span><span>01 Nexum TV</span><b>Live</b></span><span><span>07 Napoletano</span><b>Presto</b></span><span class="is-sel"><span>08 Full Gas</span><b>● Motori</b></span></div>
       </div>
     </div>
   </div>
 </section>
-<style>@media(max-width:900px){#hbbtv .grid[style]{grid-template-columns:1fr!important}}</style>
 
 <!-- ============ RETE ============ -->
-<section class="sez" id="rete">
+<section class="sez" id="rete" style="background:var(--asfalto-2);border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="sez-head sez-head--split">
-      <div>
-        <p class="eyebrow reveal">La rete</p>
-        <h2 class="reveal" data-delay="1">Otto redazioni.<br>Un solo numero.</h2>
-      </div>
-      <p class="lead reveal" data-delay="2">Full Gas è l'ottavo canale di Nexum, la piattaforma editoriale multicanale sul digitale terrestre italiano. Ogni canale ha una linea editoriale propria, un pubblico preciso e un linguaggio verticale.</p>
+      <div><p class="eyebrow fade-up">La rete</p><h2 class="h-big" data-split>Otto redazioni.<br>Un solo numero.</h2></div>
+      <p class="lead fade-up" data-delay="2">Ogni canale Nexum ha una linea editoriale propria, un pubblico preciso e un linguaggio verticale. Full Gas è l'ottavo.</p>
     </div>
-    <div class="rete reveal">
+    <div class="rete fade-up">
       <a href="https://nexumchannel.com/canali/nexum-tv" target="_blank" rel="noopener"><b><i style="--c:#0a84ff"></i>Nexum TV</b><span>Il meglio di tutto l'universo Nexum.</span><small>Generalista · Live</small></a>
       <a href="https://nexumchannel.com/canali/italian-horse-tv" target="_blank" rel="noopener"><b><i style="--c:#8A9199"></i>Italian Horse TV</b><span>Il cavallo, raccontato da chi lo conosce.</span><small>Equitazione · Live</small></a>
       <a href="https://nexumchannel.com/canali/salute24" target="_blank" rel="noopener"><b><i style="--c:#1ECD71"></i>Salute24</b><span>La salute spiegata bene.</span><small>Salute · Live</small></a>
@@ -332,17 +357,13 @@
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
 <section class="sez sez--tight">
   <div class="wrap">
-    <div class="cta reveal">
-      <p class="eyebrow">DVB-T2 · HbbTV · Full HD</p>
+    <div class="cta fade-up">
+      <p class="eyebrow">DVB-T2 · HbbTV · Full HD · YouTube</p>
       <h2>È già dentro il tuo televisore.</h2>
-      <p class="lead">Niente da installare, niente da sottoscrivere. La rete Nexum trasmette già sulla tua antenna, e la guardi anche online, in diretta, ovunque tu sia.</p>
-      <div class="btns">
-        <a class="btn btn--primary" href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda la diretta Nexum</a>
-        <a class="btn btn--ghost" href="https://nexumchannel.com/inserzionisti" target="_blank" rel="noopener">Area inserzionisti</a>
-      </div>
+      <p class="lead">Niente da installare, niente da sottoscrivere: la rete Nexum trasmette già sulla tua antenna. E gli speciali di Full Gas li trovi su YouTube, a cominciare da stasera.</p>
+      <div class="btns"><a class="btn btn--primary" href="https://www.youtube.com/@FullGas403" target="_blank" rel="noopener">Iscriviti al canale YouTube ↗</a><a class="btn btn--ghost" href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda la diretta Nexum ↗</a></div>
     </div>
   </div>
 </section>
@@ -357,16 +378,16 @@
         <p style="margin:0">Il canale motori della rete Nexum, la piattaforma editoriale multicanale sul digitale terrestre italiano. Canale 403, HbbTV, Full HD.</p>
         <address><b style="color:var(--bianco)">Blue Vinyl Events S.r.l.s.</b><br>Via degli Olmetti 18, 00060 Formello (RM), Italia<br>P.IVA 17199591003</address>
         <p style="margin:0"><a href="mailto:commerciale@nexumchannel.com">commerciale@nexumchannel.com</a> · <a href="tel:+393440793787">344 079 3787</a></p>
-        <div class="badges"><span class="pill">DVB-T2</span><span class="pill">HbbTV</span><span class="pill">LCN 403</span></div>
+        <div class="badges"><span class="pill">DVB-T2</span><span class="pill">HbbTV</span><span class="pill">LCN 403</span><a class="pill pill--ar" href="https://www.youtube.com/@FullGas403" target="_blank" rel="noopener">YouTube ↗</a></div>
       </div>
       <div><h4>Canale</h4><ul>
-        <li><a href="#programmi">Programmi</a></li><li><a href="#palinsesto">Palinsesto</a></li><li><a href="speciale-gazometro.html">Speciale Gazometro</a></li><li><a href="magazine.html">Magazine</a></li><li><a href="#hbbtv">Come vederci</a></li></ul></div>
+        <li><a href="#canale">Il canale</a></li><li><a href="#programmi">Programmi</a></li><li><a href="#stasera">Stasera · la premiere</a></li><li><a href="#palinsesto">Palinsesto</a></li><li><a href="speciale-gazometro.html">Speciale Gazometro</a></li><li><a href="magazine.html">Magazine</a></li><li><a href="#hbbtv">Come vederci</a></li></ul></div>
       <div><h4>Rete</h4><ul>
         <li><a href="https://nexumchannel.com/canali" target="_blank" rel="noopener">Gli otto canali</a></li><li><a href="https://nexumchannel.com/palinsesto" target="_blank" rel="noopener">Palinsesto Nexum</a></li><li><a href="https://nexumchannel.com/guarda" target="_blank" rel="noopener">Guarda in diretta</a></li><li><a href="https://nexumchannel.com/#hbbtv" target="_blank" rel="noopener">Come funziona HbbTV</a></li></ul></div>
       <div><h4>Business</h4><ul>
         <li><a href="https://nexumchannel.com/inserzionisti" target="_blank" rel="noopener">Area inserzionisti</a></li><li><a href="https://nexumchannel.com/inserzionisti#dati" target="_blank" rel="noopener">Dati di ascolto</a></li><li><a href="https://nexumchannel.com/inserzionisti#formati" target="_blank" rel="noopener">Formati pubblicitari</a></li><li><a href="https://nexumchannel.com/inserzionisti#contatti" target="_blank" rel="noopener">Contatti</a></li></ul></div>
     </div>
-    <p class="small muted" style="margin:32px 0 0;font-size:12.5px;max-width:90ch">Fotografie del Gazometro: Gidipa, Sergio D'Afflitto, Livio Sapio (CC BY-SA 4.0) ed Emiliano Felicissimo (CC BY-SA 2.0), via <a href="https://commons.wikimedia.org/wiki/Category:Gazometro_(Rome)" target="_blank" rel="noopener" style="color:var(--bianco-2)">Wikimedia Commons</a>, ridimensionate. Immagine chiave del canale e marchi © Blue Vinyl Events S.r.l.s.</p>
+    <p class="small muted" style="margin:32px 0 0;font-size:12.5px;max-width:90ch">Fotografie del Gazometro: Gidipa, Sergio D'Afflitto, Livio Sapio (CC BY-SA 4.0) ed Emiliano Felicissimo (CC BY-SA 2.0), via <a href="https://commons.wikimedia.org/wiki/Category:Gazometro_(Rome)" target="_blank" rel="noopener" style="color:var(--bianco-2)">Wikimedia Commons</a>, ridimensionate. Fotogrammi dello speciale, immagine chiave e marchi © Blue Vinyl Events S.r.l.s.</p>
     <div class="footer__bottom">
       <span>© <span data-anno>2026</span> Blue Vinyl Events S.r.l.s. — Full Gas, canale 403 digitale terrestre. Tutti i diritti riservati.</span>
       <span><a href="https://nexumchannel.com/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://nexumchannel.com/cookie-policy" target="_blank" rel="noopener">Cookie</a> · <a href="https://nexumchannel.com/note-legali" target="_blank" rel="noopener">Note legali</a></span>
@@ -374,6 +395,25 @@
   </div>
 </footer>
 
-<script src="assets/js/fullgas.js"></script>
+<!-- contagiri di scorrimento -->
+<div class="gauge" id="gauge" role="button" tabindex="0" aria-label="Torna in cima">
+  <svg viewBox="0 0 96 96" aria-hidden="true">
+    <circle class="g-face" cx="48" cy="48" r="44"/>
+    <path class="g-arc" d="M 20.2 75.8 A 39.3 39.3 0 1 1 75.8 75.8"/>
+    <path class="g-red" d="M 75.8 75.8 A 39.3 39.3 0 0 0 86.5 56"/>
+    <path class="g-prog" d="M 20.2 75.8 A 39.3 39.3 0 1 1 75.8 75.8"/>
+    <line class="g-needle" x1="48" y1="48" x2="48" y2="16"/>
+    <circle class="g-hub" cx="48" cy="48" r="4"/>
+  </svg>
+  <div class="gauge__num" data-gauge-num>0000<small>giri · torna su</small></div>
+  <span class="gauge__tip">Torna in cima</span>
+</div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/gazometro.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/home.js"></script>
 </body>
 </html>

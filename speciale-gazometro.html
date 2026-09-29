@@ -2,16 +2,19 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Speciale · Il Gazometro accende i motori — Full Gas</title>
-<meta name="description" content="Lo speciale di Full Gas dal Gazometro di Roma Ostiense: tre giorni, oltre trenta case, mille moto nella Rome Night Run. Un reportage da vicino, come si racconta un posto vero.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Speciale · Eternal City Moto Show 2026 — Full Gas</title>
+<meta name="description" content="Lo speciale di Full Gas sull'Eternal City Moto Show 2026 al Gazometro di Roma: Harley da corsa svelate sotto il telo, una moto samurai, i chopper dagli Stati Uniti. Con Mauro Caputi e Claudia Cucchiarelli. Premiere il 29 settembre alle 21:00.">
 <meta name="theme-color" content="#0B0C0E">
 <meta property="og:title" content="Speciale · Il Gazometro accende i motori — Full Gas">
 <meta property="og:description" content="Mille moto sotto il gasometro più alto d'Italia. Il primo speciale di Full Gas.">
-<meta property="og:image" content="assets/img/gazometro-rust.jpg">
+<meta property="og:image" content="assets/img/yt/premiere.jpg">
 <link rel="icon" href="brand/fg_mark_arancio.png" type="image/png">
 <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fullgas.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<noscript><style>.fade-up,.reveal{opacity:1!important;transform:none!important}.ignition,.cursor,.gauge{display:none!important}</style></noscript>
 <style>
 .sp-hero{min-height:100svh}
 .sp-hero .hero__media img{object-position:50% 38%}
@@ -35,23 +38,25 @@
 @media(max-width:760px){.galleria{grid-template-columns:1fr}.galleria figure:first-child{grid-row:auto}}
 </style>
 </head>
-<body>
+<body data-state="before">
 <a class="skip" href="#main">Vai al contenuto</a>
+<div class="cursor is-hidden" aria-hidden="true"><i class="cursor__dot"></i><i class="cursor__ring"></i></div>
+<div class="progress" aria-hidden="true"><i></i></div>
 <div class="page-grain" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Full Gas, home"><img class="brand__mark" src="brand/fg_mark_arancio.png" alt=""><span class="brand__name">Full Gas</span></a>
     <nav class="nav__links" aria-label="Principale">
+      <a href="index.html#canale">Il canale</a>
       <a href="index.html#programmi">Programmi</a>
-      <a href="index.html#palinsesto">Palinsesto</a>
-      <a href="speciale-gazometro.html" aria-current="page">Speciale Gazometro</a>
+      <a href="index.html#stasera">Stasera</a>
+      <a href="speciale-gazometro.html" aria-current="page">Speciale</a>
       <a href="magazine.html">Magazine</a>
       <a href="index.html#hbbtv">Come vederci</a>
     </nav>
     <div class="nav__cta">
-      <span class="pill pill--soon"><i class="dot dot--pulse"></i>403 · In arrivo</span>
-      <a class="btn btn--ghost btn--sm" href="https://nexumchannel.com" target="_blank" rel="noopener">Nexum ↗</a>
+      <a class="nav__live" href="index.html#stasera" data-state="before"><i class="dot dot--pulse"></i><span data-live-label>Premiere 21:00</span><b data-cd-mini>--:--:--</b></a>
       <button class="nav__burger" aria-label="Apri il menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -59,7 +64,7 @@
 
 <main id="main">
 
-<section class="hero sp-hero" aria-label="Speciale Gazometro">
+<section class="hero sp-hero" aria-label="Speciale Eternal City Moto Show">
   <div class="hero__media ken"><img src="assets/img/gazometro-rust.jpg" alt="Il Gazometro di Roma Ostiense: anelli e colonne di ferro arrugginito a luce radente"></div>
   <div class="hero__scrim"></div>
   <div class="hero__glow"></div>
@@ -67,11 +72,47 @@
   <div class="hero__timecode" aria-hidden="true"><span class="rec">● Speciale</span><b data-timecode>00:00:00:00</b><span>Roma Ostiense · 41°52′N 12°28′E</span></div>
   <div class="hero__content">
     <div class="wrap">
-      <p class="eyebrow reveal"><b>Speciale</b> · Roma Ostiense · 25–27 settembre 2026</p>
-      <h1 class="reveal" data-delay="1">Il Gazometro <em>accende</em> i motori</h1>
-      <p class="lead reveal" data-delay="2">Per tre giorni il gasometro più alto d'Italia è diventato un villaggio di motociclette: oltre trenta case, prove su strada, i costruttori custom arrivati dagli Stati Uniti e una notte in cui mille moto sono partite da Ostiense verso il centro di Roma. <b>Full Gas lo racconta da vicino, come si racconta un posto vero.</b></p>
-      <div class="chip-row reveal" data-delay="3">
-        <span class="pill pill--ar">Decima edizione</span><span class="pill">Eternal City Moto Show</span><span class="pill">Rome Night Run</span><span class="pill pill--soon">Prima serata · canale 403</span>
+      <p class="hero__kicker fade-up"><i class="dot dot--pulse"></i><b>Speciale</b> · Eternal City Moto Show 2026 · Roma Ostiense, 25–27 settembre</p>
+      <h1 data-split>Harley da corsa<br>svelate sotto<br><em>il telo.</em></h1>
+      <p class="lead fade-up" data-delay="2">Il primo speciale di Full Gas: la decima edizione dell'Eternal City Moto Show, per la prima volta al Gazometro di Roma. Una moto samurai, una Royal Enfield trasformata in un mazzo di fiori, i chopper arrivati dagli Stati Uniti e Claudia con una sola domanda. <b>Con Mauro Caputi e Claudia Cucchiarelli.</b></p>
+      <div class="chip-row fade-up" data-delay="3">
+        <span class="pill pill--ar"><i class="dot dot--pulse"></i><span data-live-label>Premiere 21:00</span></span><span class="pill">34 minuti</span><span class="pill">Decima edizione</span><span class="pill pill--soon">YouTube @FullGas403</span>
+      </div>
+      <div class="hero__actions fade-up" data-delay="4">
+        <a class="btn btn--primary" href="#guarda">Guarda lo speciale
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#capitoli">I capitoli</a>
+      </div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#guarda"><span>Scorri</span><i></i></a>
+</section>
+
+<!-- player -->
+<section class="sez" id="guarda">
+  <div class="wrap">
+    <div class="prem">
+      <div class="player fade-up" data-state="before">
+        <img src="assets/img/yt/premiere.jpg" alt="Mauro Caputi e Claudia Cucchiarelli con le moto dell'Eternal City Moto Show 2026" width="1280" height="720">
+        <span class="player__chip"><i class="dot dot--pulse"></i>Premiere fra <b data-player-cd>--:--:--</b></span>
+        <button class="player__btn" type="button" aria-label="Riproduci lo speciale"><span class="player__play"><svg viewBox="0 0 24 24" fill="#0B0C0E"><path d="M5 3l16 9-16 9z"/></svg></span></button>
+        <div class="player__meta"><span class="player__title">Eternal City Moto Show 2026 · lo speciale</span><span class="player__yt">YouTube · 34′</span></div>
+      </div>
+      <div class="prem__side">
+        <div class="fade-up" data-delay="1">
+          <p class="eyebrow eyebrow--no" style="margin-bottom:12px">I capitoli · clicca e vai al minuto</p>
+          <nav class="cap-list" aria-label="Capitoli dello speciale">
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=93s" data-play="93"><span class="tc">01:33</span><span class="t">Killer Bagger Contest<small>Le Harley da corsa</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=500s" data-play="500"><span class="tc">08:20</span><span class="t">Workshop Legends<small>Quattro special svelate</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1107s" data-play="1107"><span class="tc">18:27</span><span class="t">Ars Mechanica<small>Dallo sketch alla moto</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1273s" data-play="1273"><span class="tc">21:13</span><span class="t">La storia di Vincent</span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1583s" data-play="1583"><span class="tc">26:23</span><span class="t">La gente del Gazometro<small>Il gioco di Claudia</small></span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=1823s" data-play="1823"><span class="tc">30:23</span><span class="t">Colosseum Chopper Show</span></a>
+            <a href="https://www.youtube.com/watch?v=LesX001M5Co&t=2007s" data-play="2007"><span class="tc">33:27</span><span class="t">Daje gas! Il finale</span></a>
+          </nav>
+        </div>
+        <div class="hosts fade-up" data-delay="2"><span class="pill"><i>MC</i>Mauro Caputi</span><span class="pill"><i>CC</i>Claudia Cucchiarelli</span></div>
+        <a class="btn btn--primary fade-up" data-delay="3" href="https://www.youtube.com/watch?v=LesX001M5Co" target="_blank" rel="noopener" style="justify-self:start">Guarda su YouTube ↗</a>
       </div>
     </div>
   </div>
@@ -80,11 +121,11 @@
 <!-- numeri -->
 <section class="sez sez--tight" style="background:var(--asfalto-2);border-block:1px solid var(--line)">
   <div class="wrap">
-    <div class="numeri reveal">
+    <div class="numeri fade-up">
       <div class="numero"><b>3</b><span>giorni · 25, 26, 27 settembre</span></div>
-      <div class="numero"><b><span data-count="30" data-suffix="">30</span><i>+</i></b><span>case motociclistiche</span></div>
-      <div class="numero"><b><span data-count="1000">1.000</span></b><span>moto nella Night Run</span></div>
-      <div class="numero"><b><span data-count="30000">30.000</span></b><span>visitatori attesi</span></div>
+      <div class="numero"><b><span data-count="6">6</span></b><span>capitoli · 34 minuti</span></div>
+      <div class="numero"><b><span data-count="4">4</span></b><span>special svelate al Workshop Legends</span></div>
+      <div class="numero"><b><span data-count="80000">80.000</span><i>€</i></b><span>la bagger da corsa più cara</span></div>
       <div class="numero"><b>10<i>ª</i></b><span>edizione · la prima al Gazometro</span></div>
     </div>
   </div>
@@ -93,83 +134,96 @@
 <!-- capitoli -->
 <section class="sez">
   <div class="wrap">
-    <div class="capitoli">
+    <div class="capitoli" id="capitoli">
 
-      <article class="cap reveal">
+      <article class="cap fade-up">
         <div class="cap__n">01<i>Il luogo</i></div>
         <div class="cap__body">
           <p class="eyebrow">Ostiense · archeologia industriale</p>
           <h2>Un serbatoio alto come un palazzo di trenta piani</h2>
           <div class="corpo">
-            <p>Il Gazometro di Roma è la struttura che si vede da tutta la parte sud della città: un cilindro di ferro a traliccio, costruito fra il 1935 e il 1937 dall'Ansaldo, che per decenni ha contenuto il gas illuminante della capitale ed è stato il gasometro più grande d'Italia. Oggi la campana non c'è più e resta lo scheletro, che è la cosa più bella: anelli e colonne di acciaio chiodato che il sole basso attraversa come una lanterna.</p>
-            <p>Intorno, l'area che fu della fabbrica del gas è diventata un distretto dell'innovazione, con l'Eni che l'ha rimessa in vita e ne ha fatto un luogo di eventi. È qui, per la prima volta in dieci edizioni, che il salone romano della moto ha portato il suo villaggio: dal raduno custom degli inizi alla rassegna che oggi mette in fila tutte le famiglie di due ruote, l'archeologia industriale è diventata, per un fine settimana, un tempio della moto contemporanea.</p>
+            <p>Il Gazometro di Roma è la struttura che si vede da tutta la parte sud della città: un cilindro di ferro a traliccio, costruito fra il 1935 e il 1937 dall'Ansaldo, che per decenni ha contenuto il gas illuminante della capitale ed è stato il gasometro più grande d'Italia. Oggi resta lo scheletro, che è la cosa più bella: anelli e colonne di acciaio chiodato che il sole basso attraversa come una lanterna.</p>
+            <p>È qui, per la prima volta in dieci edizioni, che l'Eternal City Moto Show ha portato il suo villaggio: dal raduno custom degli inizi alla rassegna che oggi mette in fila tutte le famiglie di due ruote. Mauro Caputi apre lo speciale da qui, sotto il traliccio, e spiega perché quest'anno l'evento ha un giorno in più.</p>
           </div>
-          <p class="aparte">«Anelli e colonne di acciaio che il sole basso attraversa come una lanterna: il Gazometro è già un'inquadratura, prima ancora di accendere la camera.»<small>Dal copione dello speciale</small></p>
+          <figure class="cap__media"><img src="assets/img/gazometro-pano.jpg" alt="Il Gazometro visto dal ponte di ferro al crepuscolo" loading="lazy"><figcaption>Il luogo · dal ponte di ferro · crepuscolo · <a href="#guarda" data-play="36" style="color:var(--amber)">00:36 ▶</a></figcaption></figure>
         </div>
       </article>
 
-      <article class="cap reveal">
-        <div class="cap__n">02<i>Il Village</i></div>
+      <article class="cap fade-up">
+        <div class="cap__n">02<i>Le Harley</i></div>
         <div class="cap__body">
-          <p class="eyebrow">Tre giorni · 30+ case</p>
-          <h2>Si arriva col casco e si prova</h2>
+          <p class="eyebrow">01:33 · Killer Bagger Contest</p>
+          <h2>Harley da corsa da ottantamila euro</h2>
           <div class="corpo">
-            <p>Il villaggio ai piedi del Gazometro funziona in un modo semplice: si arriva con il proprio casco, ci si registra allo stand della casa e si esce in demo ride sui modelli nuovi. Oltre trenta costruttori, dalle adventure alle naked, dagli scooter alle elettriche, con le anteprime di mercato accanto ai corsi di tecnica di guida, teorici e pratici, e uno spazio per i bambini.</p>
-            <p>La decima edizione ha aggiunto un giorno intero al programma, con l'obiettivo dichiarato di superare i trentamila visitatori dell'anno prima. E ha portato la scena custom internazionale a Ostiense: dagli Stati Uniti sono arrivati l'artista e tatuatore Darren McKeag e il customizer newyorkese Bob Seeger, della leggendaria officina Indian Larry.</p>
-          </div>
-          <figure class="cap__media"><img src="assets/img/gazometro-pano.jpg" alt="Il Gazometro visto dal ponte di ferro al crepuscolo" loading="lazy"><figcaption>Il luogo · dal ponte di ferro · crepuscolo</figcaption></figure>
-        </div>
-      </article>
-
-      <article class="cap reveal">
-        <div class="cap__n">03<i>La notte</i></div>
-        <div class="cap__body">
-          <p class="eyebrow">Sabato 26 settembre · Rome Night Run</p>
-          <h2>Mille fari dal Gazometro al centro</h2>
-          <div class="corpo">
-            <p>Il momento che dà il titolo allo speciale. La sera di sabato, fino a mille motociclisti si sono messi in fila nel Village e sono partiti insieme, in un'unica sfilata notturna, dal Gazometro verso le strade del centro di Roma. La parata è stata organizzata in collaborazione con il Moto Club Polizia di Stato, che ne ha garantito sicurezza e spettacolo.</p>
-            <p>Lo raccontiamo da bordo strada, con la camera bassa e la luce che c'è: i lampioni al sodio, l'asfalto bagnato che restituisce i fari, il rumore che cambia quando la colonna passa sotto un ponte. Nessun rallentatore senza motivo: un fiume di moto che scorre si muove già da solo.</p>
-          </div>
-          <figure class="cap__media"><img src="assets/img/gazometro-dusk.jpg" alt="Il Gazometro al crepuscolo, con i fari delle auto in strada" loading="lazy"><figcaption>La notte · il Gazometro alle nove di sera, fari accesi</figcaption></figure>
-        </div>
-      </article>
-
-      <article class="cap reveal">
-        <div class="cap__n">04<i>Le novità</i></div>
-        <div class="cap__body">
-          <p class="eyebrow">Anteprime · viste sul posto</p>
-          <h2>Tre moto che valevano il viaggio</h2>
-          <div class="corpo">
-            <p>Fra gli stand, tre cose che la camera ha seguito più delle altre. La <b>Royal Enfield Flying Flea C6</b>, elettrica, al suo debutto italiano: un telaio in alluminio e una forcella anteriore a parallelogramma che sembra uscita dagli anni Trenta e invece è il pezzo più nuovo del salone. Le nuove <b>Norton</b>, esposte e disponibili per le prove. E la <b>Moto Morini 3½ Sport</b>, che riporta un nome storico su un bicilindrico a V di 60 gradi da 32 cavalli e 30 newtonmetri, a un prezzo di listino di 4.190 euro.</p>
-            <p>Nella sezione dei customizer, il pezzo che ha fermato tutti: una Royal Enfield con <b>due motori in serie</b>, due moto diventate una. Non si spiega a parole; si mostra da vicino, un dado alla volta.</p>
+            <p>Il Killer Bagger Contest, ideato da Carlo Stievano con Fabrizio Croce, mette in fila le Harley-Davidson trasformate in moto da corsa: borse laterali e carene da pista, sospensioni FG Gubellini, e preparazioni che arrivano a costare ottantamila euro. In gara 4Touring, Ironborne Motorcycles e Breska Inc. Kustom.</p>
+            <p>Si sta vicini: macro sulle sospensioni, sui freni, sulle carene ancora coperte. Poi il telo si toglie, e la camera non stacca.</p>
           </div>
           <div class="scheda">
-            <div><span>Flying Flea C6</span><span>Royal Enfield · elettrica · debutto italiano</span></div>
-            <div><span>Norton</span><span>Nuovi modelli · esposti e in prova</span></div>
-            <div><span>Moto Morini 3½ Sport</span><span>V2 a 60° · 32 CV · 30 Nm · 4.190 €</span></div>
-            <div><span>Custom</span><span>Royal Enfield bimotore in serie</span></div>
+            <div><span>4Touring</span><span>Bagger da corsa · Killer Bagger Contest</span></div>
+            <div><span>Ironborne</span><span>Ironborne Motorcycles · bagger da corsa</span></div>
+            <div><span>Breska</span><span>Breska Inc. Kustom · bagger da corsa</span></div>
+            <div><span>Sospensioni</span><span>FG Gubellini</span></div>
           </div>
         </div>
       </article>
 
-      <article class="cap reveal">
-        <div class="cap__n">05<i>In onda</i></div>
+      <article class="cap fade-up">
+        <div class="cap__n">03<i>Le special</i></div>
         <div class="cap__body">
-          <p class="eyebrow">Come è costruito lo speciale</p>
-          <h2>Tre atti, come un documentario</h2>
+          <p class="eyebrow">08:20 · Workshop Legends</p>
+          <h2>Quattro special svelate sotto il telo</h2>
           <div class="corpo">
-            <p>Lo speciale segue l'ossatura dei documentari di Full Gas: il luogo prima delle cose, le cose prima dei dettagli. Si apre con il Gazometro visto da lontano, entra nel Village con la camera a spalla perché c'è qualcuno che cammina, e chiude sulla parata notturna con inquadrature lunghe, perché un fiume di moto non ha bisogno di stacchi.</p>
-            <p>Il testo entra solo quando porta un dato: le date, i numeri, il nome di un modello, un prezzo. Le voci sono quelle di chi era lì. E i costruttori, le targhe e i volti si vedono per quello che fanno, mai per decorazione.</p>
+            <p>Con Andrea «Dopz» Erba, quattro officine presentano il pezzo su cui hanno lavorato un anno. «Massimo», di Massimo Rinchiuso (Fuchs Workshop). «Elemento», di RAGE / Cus'Tom Motorcycle. «Royal Flowers», di Giacomo Galbiati (GDesign): una Royal Enfield trasformata in un mazzo di fiori. E «Murasaki», di Matteucci Garage: una moto samurai che, come dice Marco Matteucci, ha l'aspetto trasandato perché è un guerriero e ha subìto battaglie.</p>
           </div>
-          <div class="prog-guida">
-            <div><b>I<i>atto</i></b><span>Il luogo · 06–08′</span><p>Il Gazometro, la storia in tre date, l'arrivo del Village. Campi larghi, luce del tardo pomeriggio.</p></div>
-            <div><b>II<i>atto</i></b><span>Le moto · 10–12′</span><p>Demo ride, le tre novità, i customizer. Macro sulla meccanica, mani che lavorano.</p></div>
-            <div><b>III<i>atto</i></b><span>La notte · 08–10′</span><p>La Rome Night Run da bordo strada fino al centro. Inquadrature lunghe, luce disponibile.</p></div>
+          <figure class="cap__media"><img src="assets/img/yt/teaser.jpg" alt="Marco Matteucci presenta la «Murasaki» al Workshop Legends" loading="lazy"><figcaption>Workshop Legends · Marco Matteucci e la «Murasaki» · <a href="#guarda" data-play="500" style="color:var(--amber)">08:20 ▶</a></figcaption></figure>
+          <div class="scheda">
+            <div><span>«Massimo»</span><span>Massimo Rinchiuso · Fuchs Workshop</span></div>
+            <div><span>«Elemento»</span><span>RAGE / Cus'Tom Motorcycle</span></div>
+            <div><span>«Royal Flowers»</span><span>Giacomo Galbiati · GDesign · Royal Enfield</span></div>
+            <div><span>«Murasaki»</span><span>Matteucci Garage · la moto samurai</span></div>
           </div>
-          <div class="timeline" style="margin-top:8px">
-            <div class="tl is-ar"><b>Prima visione</b><p><strong>Prima serata su Full Gas</strong>, canale 403, tasto rosso posizione 8. La data di messa in onda è annunciata dal tasto rosso e dal palinsesto della rete.</p></div>
-            <div class="tl"><b>Repliche</b><p>Nella fascia notte e nel pomeriggio dei giorni successivi, come tutti i pezzi di punta del canale.</p></div>
-            <div class="tl"><b>Magazine</b><p>Lo speciale è la storia di copertina del <a href="magazine.html" style="color:var(--ignition)">numero 01 di Full Gas Magazine</a>, con i tre atti in doppia pagina.</p></div>
+        </div>
+      </article>
+
+      <article class="cap fade-up">
+        <div class="cap__n">04<i>Il disegno</i></div>
+        <div class="cap__body">
+          <p class="eyebrow">18:27 · Ars Mechanica &nbsp;·&nbsp; 21:13 · La storia di Vincent</p>
+          <h2>Dallo sketch alla moto, e una storia che parla di odio online</h2>
+          <div class="corpo">
+            <p>Con Alessio «Tex» Tommasetti, Ars Mechanica racconta come una moto nasce su un foglio: lo sketch, le proporzioni, i pezzi che si trovano e quelli che si fanno. È il capitolo in cui il canale mostra le mani prima delle parole.</p>
+            <p>Poi la storia di Vincent, un capitolo che parla anche di odio online. Se stai vivendo un momento difficile non sei solo, parlane con qualcuno: Telefono Amico 02 2327 2327 (24 ore su 24), WhatsApp Amico 324 011 7252, Telefono Azzurro 19696. In caso di pericolo immediato chiama il 112.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="cap fade-up">
+        <div class="cap__n">05<i>La gente</i></div>
+        <div class="cap__body">
+          <p class="eyebrow">26:23 · La gente del Gazometro</p>
+          <h2>Il gioco di Claudia: qual è la tua moto preferita?</h2>
+          <div class="corpo">
+            <p>Mauro aveva un problema e l'ha affidato a Claudia Cucchiarelli: girare il Village con una sola domanda per tutti. Le risposte sono la parte più vera dello speciale: chi la moto ce l'ha da trent'anni, chi la sta ancora scegliendo, chi risponde «no, no… perché mi fa male tutto». E tu, qual è la tua moto preferita? Scrivilo nei commenti.</p>
+          </div>
+          <figure class="cap__media"><img src="assets/img/yt/claudia.jpg" alt="Un visitatore del Village risponde alla domanda di Claudia" loading="lazy"><figcaption>Vox pop · la gente del Gazometro · <a href="https://www.youtube.com/shorts/rS80Dlt1F_g" target="_blank" rel="noopener" style="color:var(--amber)">lo short ↗</a></figcaption></figure>
+        </div>
+      </article>
+
+      <article class="cap fade-up">
+        <div class="cap__n">06<i>I chopper</i></div>
+        <div class="cap__body">
+          <p class="eyebrow">30:23 · Colosseum Chopper Show</p>
+          <h2>I chopper arrivati dagli Stati Uniti</h2>
+          <div class="corpo">
+            <p>Il Colosseum Chopper Show chiude lo speciale con la scena custom internazionale: Cary Brobeck di Choppers Magazine, Marcos Vazquez di Free Kustom Cycles e Mooneyes Spain, Stéphane Grand di T4 Motorcycles, Lorenzo «Boccin» Solighetto di BCC Boccin Custom Cycles, l'artista Darren McKeag e Bobby Seeger di Indian Larry Motorcycles, arrivati dagli Stati Uniti. Poi il finale: daje gas.</p>
+          </div>
+          <div class="scheda">
+            <div><span>Cary Brobeck</span><span>Choppers Magazine</span></div>
+            <div><span>Marcos Vazquez</span><span>Free Kustom Cycles · Mooneyes Spain</span></div>
+            <div><span>Stéphane Grand</span><span>T4 Motorcycles</span></div>
+            <div><span>Lorenzo Solighetto</span><span>«Boccin» · BCC Boccin Custom Cycles</span></div>
+            <div><span>Darren McKeag</span><span>McKeag Art</span></div>
+            <div><span>Bobby Seeger</span><span>Indian Larry Motorcycles</span></div>
           </div>
         </div>
       </article>
@@ -182,12 +236,12 @@
 <section class="sez sez--tight" style="background:var(--asfalto-2);border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="sez-head">
-      <p class="eyebrow reveal">Fotogrammi</p>
-      <h2 class="reveal t-medio" data-delay="1">Quello che la camera ha guardato più a lungo</h2>
+      <p class="eyebrow fade-up">Fotogrammi</p>
+      <h2 class="t-medio" data-split>Quello che la camera<br>ha guardato più a lungo</h2>
     </div>
-    <div class="galleria reveal">
+    <div class="galleria fade-up">
       <figure><img src="assets/img/gazometro-rust.jpg" alt="La struttura del Gazometro a luce radente" loading="lazy"><figcaption>Atto I · il luogo · luce radente</figcaption></figure>
-      <figure><img src="assets/img/ostiense-bw.jpg" alt="Ostiense, archeologia industriale in bianco e nero" loading="lazy"><figcaption>Archivio · Ostiense · bianco e nero</figcaption></figure>
+      <figure><img src="assets/img/yt/premiere.jpg" alt="Mauro Caputi e Claudia Cucchiarelli" loading="lazy"><figcaption>I conduttori · Mauro Caputi e Claudia Cucchiarelli</figcaption></figure>
       <figure><img src="assets/img/gazometro-dusk.jpg" alt="Il Gazometro al crepuscolo con i fari delle auto" loading="lazy"><figcaption>Atto III · la notte · crepuscolo</figcaption></figure>
     </div>
   </div>
@@ -197,15 +251,15 @@
 <section class="sez">
   <div class="wrap">
     <div class="grid" style="grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,64px);align-items:start">
-      <div class="cta reveal">
+      <div class="cta fade-up">
         <p class="eyebrow">Canale 403 · tasto rosso · posizione 8</p>
-        <h2>Lo speciale si vede da casa, sull'antenna di sempre.</h2>
-        <p class="lead">Sintonizza il 403, connetti la TV a internet, premi il tasto rosso e scendi fino all'ottava voce. Niente app, niente abbonamenti.</p>
-        <div class="btns"><a class="btn btn--primary" href="index.html#hbbtv">Come vederci</a><a class="btn btn--ghost" href="magazine.html">Leggi il Magazine</a></div>
+        <h2>Stasera alle 21:00, in premiere.</h2>
+        <p class="lead">Il video parte da solo alle 21:00 su YouTube. Imposta il promemoria, oppure torna qui: il player in cima alla pagina lo mostra appena inizia.</p>
+        <div class="btns"><a class="btn btn--primary" href="https://www.youtube.com/watch?v=LesX001M5Co" target="_blank" rel="noopener">Imposta il promemoria ↗</a><a class="btn btn--ghost" href="magazine.html">Leggi il Magazine</a></div>
       </div>
-      <div class="reveal" data-delay="1">
+      <div class="fade-up" data-delay="1">
         <p class="eyebrow" style="margin-bottom:14px">Fonti e note</p>
-        <p class="fonti">Date, numeri, modelli e programma dell'evento sono ripresi dalla stampa specializzata e dalle agenzie che lo hanno seguito: <a href="https://www.moto.it/news/eternal-city-motorcycle-show-2026-al-gazometro-di-roma-tante-moto-da-vedere-e-da-provare.html" target="_blank" rel="noopener">Moto.it</a>, <a href="https://askanews.it/2026/09/22/roma-accende-i-motori-al-gazometro-con-eternal-city-moto-show-2026/" target="_blank" rel="noopener">askanews</a>, <a href="https://www.ezrome.it/eventi-a-roma/sport/113674-eternal-city-moto-show-1-000-moto-al-gazometro-di-roma" target="_blank" rel="noopener">EZ Rome</a>. La storia del Gazometro da Roma Capitale e Turismo Roma. Le fotografie del Gazometro in questa pagina non sono dell'evento: sono immagini d'archivio del luogo, pubblicate dai loro autori su Wikimedia Commons con licenza Creative Commons e qui ridimensionate. Il repertorio si mostra per quello che è, come prescrive la linea editoriale del canale.</p>
+        <p class="fonti">Capitoli, protagonisti e minutaggi sono quelli dello speciale pubblicato sul canale YouTube di Full Gas. Il contesto dell'evento viene dalla stampa specializzata: <a href="https://www.moto.it/news/eternal-city-motorcycle-show-2026-al-gazometro-di-roma-tante-moto-da-vedere-e-da-provare.html" target="_blank" rel="noopener">Moto.it</a>, <a href="https://askanews.it/2026/09/22/roma-accende-i-motori-al-gazometro-con-eternal-city-moto-show-2026/" target="_blank" rel="noopener">askanews</a>, <a href="https://www.ezrome.it/eventi-a-roma/sport/113674-eternal-city-moto-show-1-000-moto-al-gazometro-di-roma" target="_blank" rel="noopener">EZ Rome</a>. La storia del Gazometro da Roma Capitale e Turismo Roma. Le fotografie del Gazometro in questa pagina non sono dell'evento: sono immagini d'archivio del luogo, pubblicate dai loro autori su Wikimedia Commons con licenza Creative Commons e qui ridimensionate. Il repertorio si mostra per quello che è, come prescrive la linea editoriale del canale.</p>
       </div>
     </div>
   </div>
@@ -239,6 +293,14 @@
   </div>
 </footer>
 
-<script src="assets/js/fullgas.js"></script>
+<div class="gauge" id="gauge" role="button" tabindex="0" aria-label="Torna in cima">
+  <svg viewBox="0 0 96 96" aria-hidden="true"><circle class="g-face" cx="48" cy="48" r="44"/><path class="g-arc" d="M 20.2 75.8 A 39.3 39.3 0 1 1 75.8 75.8"/><path class="g-red" d="M 75.8 75.8 A 39.3 39.3 0 0 0 86.5 56"/><path class="g-prog" d="M 20.2 75.8 A 39.3 39.3 0 1 1 75.8 75.8"/><line class="g-needle" x1="48" y1="48" x2="48" y2="16"/><circle class="g-hub" cx="48" cy="48" r="4"/></svg>
+  <div class="gauge__num" data-gauge-num>0000<small>giri · torna su</small></div><span class="gauge__tip">Torna in cima</span>
+</div>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/pagine.js"></script>
 </body>
 </html>
